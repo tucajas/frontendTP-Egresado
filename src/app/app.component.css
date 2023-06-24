@@ -1,0 +1,10 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav, mat-nav-list{
+    height: 100%;
+}
+mat-sidenav{
+    width: 250px;
+    background-color:#D5D5D5;
+}
+mat-sidenav-content{
+    background-color: white;
+}

@@ -1,0 +1,11 @@
+.encabezado{
+  font-style: oblique;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: x-large;
+  display: table;
+  margin: auto;
+  font-weight: 1;
+}
+mat-toolbar{
+  background-color: #6D7993;
+}
