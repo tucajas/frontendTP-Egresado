@@ -16,7 +16,7 @@ export class ListadoComponent implements OnInit {
 
 
   dataSource:any;
-  displayedColumns:string[]=['id','nombre'];
+  displayedColumns:string[]=['id','nombre','apellido','direccion','telefono','cuenta corriente','editar','ver'];
 
   constructor( private clientes_service: ClientesService ) { }
   ngOnInit(): void {

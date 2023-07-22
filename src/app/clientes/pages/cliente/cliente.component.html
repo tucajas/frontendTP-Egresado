@@ -1,0 +1,23 @@
+<mat-grid-list cols="1" *ngIf="!cliente; else divCliente">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divCliente>
+   
+   <mat-list>
+        <span>NOMBRE</span>
+        <mat-list-item>{{ cliente.nombre }}</mat-list-item>
+        <span>APELLIDO</span>
+        <mat-list-item>{{ cliente.apellido }}</mat-list-item>
+        <span>DIRECCION</span>
+        <mat-list-item>{{ cliente.direccion }}</mat-list-item>
+        <span>TELEFONO</span>
+        <mat-list-item>{{ cliente.telefono }}</mat-list-item>
+        <span>CUENTA CORRIENTE</span>
+        <mat-list-item>{{ cliente.cuenta_Corriente }}</mat-list-item>
+   </mat-list>
+   <button mat-button (click)="regresar()" >regresar</button>
+</ng-template>

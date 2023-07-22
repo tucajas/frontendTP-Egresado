@@ -4,5 +4,5 @@ export interface Cliente{
     apellido: string;
     direccion: string;
     telefono: string;
-    cuenta:string;
+    cuenta_Corriente:string;
 }

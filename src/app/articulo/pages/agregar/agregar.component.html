@@ -1,1 +1,35 @@
-<p>agregar articulo works!</p>
+<div>
+    <p></p>
+</div>
+
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>descripcion</mat-label>
+        <input matInput type="text" [(ngModel)]="articulo.descripcion">
+    </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>stock</mat-label>
+        <input matInput type="number" [(ngModel)]="articulo.stock">
+    </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>precio costo</mat-label>
+        <input matInput type="number" [(ngModel)]="articulo.precioCosto">
+    </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>precio venta</mat-label>
+        <input matInput type="number" [(ngModel)]="articulo.precioVenta">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+
+    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+</div>
+    
