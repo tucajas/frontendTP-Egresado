@@ -1,0 +1,24 @@
+<mat-grid-list cols="1" *ngIf="!articulo; else divArticulo">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divArticulo>
+   
+   <mat-list>
+        <span>ID</span>
+        <mat-list-item>{{ articulo.id }}</mat-list-item>
+        <span>DESCRIPCION</span>
+        <mat-list-item>{{ articulo.descripcion }}</mat-list-item>
+        <span>PRECIO COSTO</span>
+        <mat-list-item>{{ articulo.precioCosto }}</mat-list-item>
+        <span>PRECIO VENTA</span>
+        <mat-list-item>{{ articulo.precioVenta }}</mat-list-item>
+        <span>STOCK</span>
+        <mat-list-item>{{ articulo.stock }}</mat-list-item>
+        
+   </mat-list>
+   <button mat-button (click)="regresar()" >regresar</button>
+</ng-template>

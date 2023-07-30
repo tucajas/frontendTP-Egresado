@@ -1,0 +1,21 @@
+<p>tipotrabajo works!</p>
+
+<mat-grid-list cols="1" *ngIf="!tipoTrabajo; else divTipoTrabajo">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divTipoTrabajo>
+   
+   <mat-list>
+        <span>NOMBRE DE LA EMPRESA</span>
+        <mat-list-item>{{ tipoTrabajo.id }}</mat-list-item>
+        <span>DIRECCION</span>
+        <mat-list-item>{{ tipoTrabajo.descripcion }}</mat-list-item>
+        <span>TELEFONO</span>
+        <mat-list-item>{{ tipoTrabajo.precio }}</mat-list-item>
+   </mat-list>
+   <button mat-button (click)="regresar()" >regresar</button>
+</ng-template>

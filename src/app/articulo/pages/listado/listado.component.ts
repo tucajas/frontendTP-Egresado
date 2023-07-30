@@ -11,7 +11,7 @@ export class ListadoComponent {
 
 
   dataSource:any;
-  displayedColumns:string[]=['id','descripcion','stock','precioCosto','precioVenta'];
+  displayedColumns:string[]=['id','descripcion','stock','precioCosto','precioVenta','editar','ver'];
 
   constructor( private articuloService: ArticuloService ) { }
   ngOnInit(): void {

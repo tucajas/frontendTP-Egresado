@@ -37,10 +37,15 @@
         
         <span class="navegacion">Buscar presupuesto</span>
     </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/"> 
+    <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/agregar"> 
         
-        <span class="navegacion">Enviar correo electronico</span>
+        <span class="navegacion">agregar tipo de trabajo</span>
     </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/listado"> 
+        
+        <span class="navegacion">listado tipo de trabajo</span>
+    </a>
+
     <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/listado"> 
         
         <span class="navegacion">Listado de materia prima</span>
@@ -52,6 +57,14 @@
     <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar"> 
         
         <span class="navegacion">Agregar materia prima</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/listado"> 
+        
+        <span class="navegacion">provedores listado / buscar</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/agregar"> 
+        
+        <span class="navegacion">provedores agregar</span>
     </a>
     
 </mat-nav-list>

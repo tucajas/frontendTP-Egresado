@@ -1,0 +1,40 @@
+<p>agregar works!</p>
+<div  fxLayoutAlign="center" >
+    <div fxFlex="50" fxLayout="column" >
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="200px"
+            fxLayout.xs="column"
+            >
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>descripcion</mat-label>
+                <input matInput type="text" [(ngModel)]="tipotrabajo.descripcion" required>
+            </mat-form-field>
+           
+            
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>precio</mat-label>
+                <input matInput type="text" [(ngModel)]="tipotrabajo.precio" required>
+            </mat-form-field>
+        
+        
+        </div>
+        
+        
+       
+        <div fxLayout="row" fxLayoutAlign="end center" >
+            <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+            
+            <button *ngIf="tipotrabajo.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
+        </div>
+        <br>
+    
+    </div>        
+</div>

@@ -1,1 +1,102 @@
 <p>agregar orden works!</p>
+<div  fxLayoutAlign="center" >
+    <div fxFlex="50" fxLayout="column" >
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="200px"
+            fxLayout.xs="column"
+            >
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>cliente</mat-label>
+                <!-- <input matInput type="text" [(ngModel)]="orden.cliente" required> -->
+                <mat-select  [(ngModel)]="orden.cliente">
+                    <mat-option  *ngFor="let c of cliente" [value]="c.id">{{c.nombre }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+           
+            
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>tipo de trabajo</mat-label>
+                <mat-select  [(ngModel)]="orden.tipoTrabajo">
+                    <mat-option  *ngFor="let t of tipoTrabajo" [value]="t.id">{{t.descripcion}}</mat-option>
+                </mat-select>
+                <!-- <input matInput type="text" [(ngModel)]="orden.tipoTrabajo" required> -->
+            </mat-form-field>
+        
+        
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>materia prima</mat-label>
+                <mat-select  [(ngModel)]="orden.materiaPrima">
+                    <mat-option  *ngFor="let m of materiaprima" [value]="m.id">{{m.descripcion }}</mat-option>
+                </mat-select>
+                <!-- <input matInput type="text" [(ngModel)]="orden.materiaPrima" required> -->
+            </mat-form-field>
+        
+        
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>cantidad</mat-label>
+                <input matInput type="text" [(ngModel)]="orden.cantidad" required>
+            </mat-form-field>
+            
+        
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>fecha de entrega</mat-label>
+                <input matInput type="date" [(ngModel)]="orden.fechaEntrega" required>
+            </mat-form-field>
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>detalle</mat-label>
+                <input matInput type="text" [(ngModel)]="orden.detalle" required>
+            </mat-form-field>
+        </div>
+        <div 
+            fxLayout="row" 
+            fxLayoutGap="20px"
+            fxLayout.xs="column">
+            
+            <mat-form-field fxFlex="100" fxLayout.xs="column">
+                <mat-label>estado</mat-label>
+                <input matInput type="text" [(ngModel)]="orden.estado" required>
+            </mat-form-field>
+        </div>
+
+
+        <div fxLayout="row" fxLayoutAlign="end center" >
+            <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+            
+            <button *ngIf="orden.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
+        </div>
+        <br>
+    
+    </div>        
+</div>

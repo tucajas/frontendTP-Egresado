@@ -31,5 +31,6 @@
 <div fxLayoutAlign="center">
 
     <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+    <button *ngIf="articulo.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
 </div>
     

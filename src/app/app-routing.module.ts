@@ -26,7 +26,15 @@ const routes: Routes = [
   {
     path: 'materiaPrima',
     loadChildren: ()=> import ('./materia-prima/materia-prima.module').then (m=>m.MateriaPrimaModule)
-  }
+  },
+  {
+    path: 'proveedores',
+    loadChildren: ()=> import ('./proveedores/proveedores.module').then (m=>m.ProveedoresModule)
+  },
+  {
+    path: 'tipoTrabajo',
+    loadChildren: ()=> import ('./tipotrabajo/tipoTtrabajo.module').then (m=>m.TipoTrabajoModule)
+  },
 ];
 
 @NgModule({

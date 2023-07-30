@@ -34,7 +34,15 @@
       <th mat-header-cell *matHeaderCellDef> precioVenta </th>
       <td mat-cell *matCellDef="let articulo"> {{articulo.precioVenta}} </td>
     </ng-container>
-    
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> editar </th>
+      <td mat-cell *matCellDef="let articulo"> <button mat-button [routerLink]="['/articulo/editar', articulo.id ]" >editar</button> </td>
+    </ng-container>
+    <ng-container matColumnDef="ver">
+      <th mat-header-cell *matHeaderCellDef> ver mas </th>
+      <td mat-cell *matCellDef="let articulo"> <button mat-button [routerLink]="['/articulo/', articulo.id ]" >ver mas</button> </td>
+    </ng-container>
+
 
     
 

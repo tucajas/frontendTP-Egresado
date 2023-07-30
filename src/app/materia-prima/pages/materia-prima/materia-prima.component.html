@@ -1,0 +1,23 @@
+<mat-grid-list cols="1" *ngIf="!materiaPrima; else divMateriaPrima">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divMateriaPrima>
+   
+   <mat-list>
+        <span>ID</span>
+        <mat-list-item>{{ materiaPrima.id }}</mat-list-item>
+        <span>DESCRIPCION</span>
+        <mat-list-item>{{ materiaPrima.descripcion }}</mat-list-item>
+        <span>PRECIO COSTO</span>
+        <mat-list-item>{{ materiaPrima.precioCosto }}</mat-list-item>
+        <span>PROVEEDOR</span>
+        <mat-list-item>{{ materiaPrima.proveedor }}</mat-list-item>
+        <span>STOCK</span>
+        <mat-list-item>{{ materiaPrima.stock }}</mat-list-item>
+   </mat-list>
+   <button mat-button (click)="regresar()" >regresar</button>
+</ng-template>

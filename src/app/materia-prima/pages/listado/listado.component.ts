@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MateriaPrimaService } from '../../servicios/materia-prima.service';
+import { Proveedor } from 'src/app/proveedores/interface';
+import { ProveedoresService } from 'src/app/proveedores/proveedores.service';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent {
+export class ListadoComponent implements OnInit {
 
   dataSource:any;
-  displayedColumns:string[]=['id','nombre'];
+  displayedColumns:string[]=['id','descripcion','stock','precioCosto','proveedor','editar','ver'];
+  proveedor: Proveedor[]=[];
 
-  constructor( private materiaP: MateriaPrimaService ) { }
+
+  constructor( private materiaP: MateriaPrimaService,
+               private proveedorserv:ProveedoresService ) { }
   ngOnInit(): void {
 
     this.materiaP.getMateriaPrima()
-    .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
+    .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);});
+    this.proveedorserv.getProveedores().subscribe(proveedor => this.proveedor=proveedor);
   }
 
 

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ServiciosService } from '../../servicios/servicios.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { Cliente } from 'src/app/clientes/interface';
+import { ClientesService } from 'src/app/clientes/servicios/clientes_service';
 
 
 
@@ -11,13 +13,19 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListadoComponent {
   dataSource:any;
-  displayedColumns:string[]=['id','cliente'];
+  displayedColumns:string[]=['id','cliente','tipoTrabajo','cantidad','fechaEntrega','detalle','estado'];
   
-  constructor( private ordenes_service: ServiciosService ) { }
+  constructor( private ordenes_service: ServiciosService,
+    private clienteservicio: ClientesService ) { }
+    
+ 
   ngOnInit(): void {
 
     this.ordenes_service.getOrdenes()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
+    
+    
+
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

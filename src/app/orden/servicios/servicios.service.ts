@@ -14,4 +14,18 @@ export class ServiciosService {
   getOrdenes():Observable<Orden[]>{
     return this.http.get<Orden[]>('http://127.0.0.1:8000/orden/list/')
   }
+  getOrdenesPorId(id:string):Observable<Orden>{
+    return this.http.get<Orden>( ` http://127.0.0.1:8000/orden/${ id }`);
+  }
+
+  agregarOrden(orden: Orden):Observable<Orden>{
+    return this.http.post<Orden>('http://127.0.0.1:8000/orden/list/',orden );
+  }
+
+  actualizarOrden(orden: Orden):Observable<Orden>{
+    return this.http.put<Orden>(`http://127.0.0.1:8000/orden/${orden.id}`,orden );
+  }
+  eliminarOrden(id: number):Observable<any>{
+    return this.http.delete<any>(`http://127.0.0.1:8000/orden/${id}` );
+  }
 }
