@@ -13,15 +13,22 @@ import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
 export class AgregarComponent {
 
   precioVenta:number=0;
+  precioVenta2:number=0;
   
   cantidad:number=0;
+  cantidad2:number=0;
 
-  subtotal:number=0;
   articulos:Articulo[]=[];
   servicio:TipoTrabajo[]=[];
+  
+  subtotal:number=0;
+  subtotalb1:number=0;
   subtotal2:number=0;
+  subtotalb2:number=0;
   subtotal3:number=0;
   total:number=0;
+  total2:number=0;
+
 
   
 
@@ -40,9 +47,25 @@ export class AgregarComponent {
     this.subtotal2=this.subtotal-porcenDesc;
     this.total=this.subtotal-this.subtotal2;
   }
+
+  tarjeta2(){
+    this.subtotalb2=this.subtotalb1*25/100;
+    this.total2=this.subtotalb1+this.subtotalb2;
+  }
+  efectivo2(){
+    const porcenDesc=this.subtotalb1*80/100;
+    this.subtotalb2=this.subtotalb1-porcenDesc;
+    this.total2=this.subtotalb1-this.subtotalb2;
+  }
+
   sumar(){
     
     this.subtotal=this.precioVenta*this.cantidad;
+   
+  }
+  sumar2(){
+    
+    this.subtotalb1=this.precioVenta2*this.cantidad2;
    
   }
   
