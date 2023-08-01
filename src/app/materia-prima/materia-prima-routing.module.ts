@@ -24,13 +24,13 @@ const routes: Routes = [
         component:AgregarComponent
       },
       {
+        path: 'stock',
+        component: EstadosComponent
+      },
+      {
         path:':id',
         component: MateriaPrimaComponent
       },
-      {
-        path: 'estado',
-        component: EstadosComponent
-      }
     ]
   }
 ];

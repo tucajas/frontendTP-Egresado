@@ -1,20 +1,25 @@
-<p>proveedor works!</p>
-<mat-grid-list cols="1" *ngIf="!proveedor; else divProveedor">
-    <mat-grid-tile>
+<div fxLayout="row" fxLayoutAlign="center">
+
+    <mat-grid-list cols="1" *ngIf="!proveedor; else divProveedor">
+        <mat-grid-tile>
         <mat-spinner></mat-spinner>
     </mat-grid-tile>
 
 </mat-grid-list>
 
 <ng-template #divProveedor>
-   
-   <mat-list>
-        <span>NOMBRE DE LA EMPRESA</span>
-        <mat-list-item>{{ proveedor.nombreDeEmpresa }}</mat-list-item>
-        <span>DIRECCION</span>
-        <mat-list-item>{{ proveedor.direccion }}</mat-list-item>
-        <span>TELEFONO</span>
-        <mat-list-item>{{ proveedor.telefono }}</mat-list-item>
-   </mat-list>
-   <button mat-button (click)="regresar()" >regresar</button>
+   <mat-card class="card">
+        <mat-card-title>PROVEEDOR</mat-card-title>
+        <mat-list>
+            <span>NOMBRE DE LA EMPRESA</span>
+            <mat-list-item>{{ proveedor.nombreDeEmpresa }}</mat-list-item>
+            <span>DIRECCION</span>
+            <mat-list-item>{{ proveedor.direccion }}</mat-list-item>
+            <span>TELEFONO</span>
+            <mat-list-item>{{ proveedor.telefono }}</mat-list-item>
+        </mat-list>
+        <button mat-button (click)="regresar()" >regresar</button>
+    </mat-card>
 </ng-template>
+
+</div>

@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'tipoTrabajo',
     loadChildren: ()=> import ('./tipotrabajo/tipoTtrabajo.module').then (m=>m.TipoTrabajoModule)
   },
+  {
+    path: 'graficos',
+    loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
+  }
 ];
 
 @NgModule({

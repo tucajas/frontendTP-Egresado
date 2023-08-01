@@ -1,4 +1,4 @@
-<p>agregar orden works!</p>
+
 <div  fxLayoutAlign="center" >
     <div fxFlex="50" fxLayout="column" >
         <div 
@@ -54,7 +54,7 @@
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>cantidad</mat-label>
-                <input matInput type="text" [(ngModel)]="orden.cantidad" required>
+                <input matInput type="number" [(ngModel)]="orden.cantidad" required>
             </mat-form-field>
             
         
@@ -86,7 +86,11 @@
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>estado</mat-label>
-                <input matInput type="text" [(ngModel)]="orden.estado" required>
+                <!-- <input matInput type="text" [(ngModel)]="orden.estado" required> -->
+                <mat-select  [(ngModel)]="orden.estado">
+                    <mat-option value="en proceso">en proceso</mat-option>
+                    <mat-option value="finalizado">finalizado</mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
 

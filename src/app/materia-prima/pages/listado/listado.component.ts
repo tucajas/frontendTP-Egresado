@@ -12,7 +12,7 @@ import { ProveedoresService } from 'src/app/proveedores/proveedores.service';
 export class ListadoComponent implements OnInit {
 
   dataSource:any;
-  displayedColumns:string[]=['id','descripcion','stock','precioCosto','proveedor','editar','ver'];
+  displayedColumns:string[]=['id','descripcion','precioCosto','proveedor','editar','ver'];
   proveedor: Proveedor[]=[];
 
 

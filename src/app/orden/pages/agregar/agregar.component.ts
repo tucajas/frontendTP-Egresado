@@ -18,6 +18,7 @@ import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
 })
 export class AgregarComponent {
 
+  
 
   orden: Orden ={
     cliente:'',
@@ -31,6 +32,9 @@ export class AgregarComponent {
   cliente:Cliente[]=[];
   materiaprima: MateriaPrima[]=[];
   tipoTrabajo: TipoTrabajo[]=[];
+  
+  
+  
   
   
   constructor( private activateroute: ActivatedRoute,
@@ -60,17 +64,27 @@ export class AgregarComponent {
         .subscribe( orden => console.log ( 'actualizando', orden ))
     }else{
       // crear
+      
+      
       this.ordenService.agregarOrden(this.orden)
         .subscribe(resp=>{
          console.log('respuesta',resp);
+         const valor=this.orden.cantidad;
+         console.log(valor); 
+
+
+
+         this.router.navigate(['orden/listado'])
       })
+
+
     }
   }
   borrar(){
     this.ordenService.eliminarOrden(this.orden.id!)
      .subscribe( resp =>{
 
-       this.router.navigate(['ordenes/']);
+       this.router.navigate(['orden/listado']);
      });
   }
 

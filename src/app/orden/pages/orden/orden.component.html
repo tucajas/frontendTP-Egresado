@@ -1,1 +1,35 @@
-<p>orden works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+
+    <mat-grid-list cols="1" *ngIf="!orden; else divOrden">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    
+    </mat-grid-list>
+    
+    <ng-template #divOrden >
+       <mat-card class="card">
+            <mat-card-content>
+    
+                <mat-list>
+                     <span>NOMBRE</span>
+                     <mat-list-item>{{ orden.cliente }}</mat-list-item>
+                     <span>APELLIDO</span>
+                     <mat-list-item>{{ orden.tipoTrabajo}}</mat-list-item>
+                     <span>MATERIA PRIMA</span>
+                     <mat-list-item>{{ orden.materiaPrima }}</mat-list-item>
+                     <span>CANTIDAD</span>
+                     <mat-list-item>{{ orden.cantidad }}</mat-list-item>
+                     <span>FECHA DE ENTREGA</span>
+                     <mat-list-item>{{ orden.fechaEntrega }}</mat-list-item>
+                     <span>DETALLE</span>
+                     <mat-list-item>{{ orden.detalle }}</mat-list-item>
+                     <span>ESTADO</span>
+                     <mat-list-item>{{ orden.estado }}</mat-list-item>
+                </mat-list>
+            </mat-card-content>
+            <button mat-button (click)="regresar()" >regresar</button>
+       </mat-card>
+    </ng-template>
+</div>
+

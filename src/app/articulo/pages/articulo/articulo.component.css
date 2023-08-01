@@ -1,0 +1,9 @@
+.card {
+    
+    max-width: 400px;
+    align-content:flex-start;
+    text-align: center;
+    border-width: 20px;
+    background-color: #6D7993;
+
+}

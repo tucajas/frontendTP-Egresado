@@ -13,7 +13,7 @@ import { ClientesService } from 'src/app/clientes/servicios/clientes_service';
 })
 export class ListadoComponent {
   dataSource:any;
-  displayedColumns:string[]=['id','cliente','tipoTrabajo','cantidad','fechaEntrega','detalle','estado'];
+  displayedColumns:string[]=['id','cliente','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
   
   constructor( private ordenes_service: ServiciosService,
     private clienteservicio: ClientesService ) { }
