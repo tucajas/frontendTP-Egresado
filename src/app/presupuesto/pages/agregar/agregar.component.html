@@ -1,4 +1,4 @@
-<div>
+<div class="col-4" class="contenedor">
     <div>
         <h1>IMPRESITO S.A.</h1>
         <h2>Presupuesto</h2>
@@ -14,103 +14,46 @@
             <label >fecha</label>
             <input matInput type="date">
         </mat-form-field>
-        
     </div>
-    <div fxLayout="row" fxLayoutAlign="space-between none"  >
-        <mat-form-field appearance="outline" >
-            <label >producto</label>
-            <mat-select >
-                <mat-option *ngFor="let art of articulos" value="art">{{art.descripcion}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-
+    <div>    
         <mat-form-field appearance="outline">
             <label >servicio</label>
-            <mat-select>
-                <mat-option value="10">1</mat-option>
+            <mat-select  [(ngModel)]="precioVenta">
+                <mat-option *ngFor="let s of servicio" [value]="s.precio">{{s.descripcion}}</mat-option>
             </mat-select>
         </mat-form-field>
-
+    
         <mat-form-field appearance="outline" >
             <label >cantidad</label>
             <input matInput type="number" name="cantidad" [(ngModel)]="cantidad">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <label >materia prima</label>
-           
-            <mat-select [(ngModel)]="precioVenta">
-                <mat-option [value]="art.precioVenta" *ngFor="let art of articulos"  type="number"  >{{art.descripcion}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
            <label >subtotal</label>
             <input matInput type="number" [(ngModel)]="subtotal" >
         </mat-form-field>
-        
-
-    </div>
-    <!-- segunda fila de producto ------------------------------------------------------------------ -->
-    <div fxLayout="row" fxLayoutAlign="space-between none"  >
-        <mat-form-field appearance="outline" >
-            <label >producto</label>
-            <mat-select >
-                <mat-option *ngFor="let art of articulos" value="art">{{art.descripcion}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-
         <mat-form-field appearance="outline">
-            <label >servicio</label>
-            <mat-select value="1">
-                <mat-option >fotocopia color</mat-option>
-                <mat-option>fotocopia b/n</mat-option>
-                <mat-option>impresion color</mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" >
-            <label >cantidad</label>
-            <input matInput type="number" name="cantidad" [(ngModel)]="cantidad2">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <label >materia prima</label>
-           
-            <mat-select [(ngModel)]="precioVenta2">
-                <mat-option [value]="art.precioVenta" *ngFor="let art of articulos"  type="number"  >{{art.descripcion}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <label>subtotal</label>
-            <input matInput type="number" [(ngModel)]="subtotal2" >
-        </mat-form-field>
-        
-
-    </div>
+            <label >descuento/recargo</label>
+             <input matInput type="number" [ngModel]="subtotal2" >
+         </mat-form-field>
     
-    <div  fxLayout="row" fxLayoutAlign="space-between none" >
+        
+    
         <mat-form-field appearance="outline">
             <label >metodo de pago</label>
             <mat-select>
-                <mat-option>tarjeta de credito</mat-option>
-                <mat-option>efectivo</mat-option>
+                <mat-option (click)="tarjeta()" value="tarjeta de credito">tarjeta de credito</mat-option>
+                <mat-option (click)="efectivo()"value="efectivo">efectivo</mat-option>
             </mat-select>
         </mat-form-field>
-
-        
-        
         <mat-form-field appearance="outline" >
             <label >total</label>
             <input matInput type="number" [(ngModel)]="total">
-        </mat-form-field>
-        
+        </mat-form-field>    
     </div>
-    <div  fxLayout="row" fxLayoutAlign="center center" >
-        
-        <button mat-button (click)="sumar()">calcular</button>
-        
-    </div>
-    <div>
+    
 
-        <button mat-button>Procesar</button>
+    <div  fxLayout="row" fxLayoutAlign="center center" >
+        <button mat-button (click)="sumar()">calcular</button>
     </div>
     
 </div>
