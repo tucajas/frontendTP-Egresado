@@ -3,6 +3,8 @@ import { ServiciosService } from '../../servicios/servicios.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Cliente } from 'src/app/clientes/interface';
 import { ClientesService } from 'src/app/clientes/servicios/clientes_service';
+import { Orden } from '../../interface';
+import { JsonPipe } from '@angular/common';
 
 
 
@@ -12,18 +14,25 @@ import { ClientesService } from 'src/app/clientes/servicios/clientes_service';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent {
+  // cliente:Cliente[]=[];
+  // orden:Orden[]=[];
   dataSource:any;
-  displayedColumns:string[]=['id','cliente','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
-  
+  // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
+    // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
+    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','detalle','estado','editar','ver'];
   constructor( private ordenes_service: ServiciosService,
-    private clienteservicio: ClientesService ) { }
+               private clienteservicio: ClientesService,
+               private ordenserv:ServiciosService ) { }
     
  
   ngOnInit(): void {
 
     this.ordenes_service.getOrdenes()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
-    
+
+    // this.clienteservicio.getCliente().subscribe(resp => this.cliente = resp)
+    // this.ordenserv.getOrdenes().subscribe(resp2 => this.orden=resp2);
+    //   console.log(this.orden);
     
 
   }

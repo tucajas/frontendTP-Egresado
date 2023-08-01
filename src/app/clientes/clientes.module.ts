@@ -8,6 +8,7 @@ import { MaterialModule } from '../materialDesigne/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PopdialogComponent } from './popdialog/popdialog.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
     AgregarComponent,
     ListadoComponent,
     ClienteComponent,
-    HomeComponent
+    HomeComponent,
+    PopdialogComponent
   ],
   imports: [
     CommonModule,

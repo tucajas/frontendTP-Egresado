@@ -3,6 +3,8 @@ import { Articulo } from '../../interface';
 import { ArticuloService } from '../../servicios/articulo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { PopdialogartComponent } from '../../popdialogart/popdialogart.component';
 
 @Component({
   selector: 'app-agregar',
@@ -19,7 +21,8 @@ export class AgregarComponent {
   }
   constructor(private articuloService: ArticuloService,
               private activateroute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private matdialogarti:MatDialog  ) { }
 
   ngOnInit(): void {
     this.activateroute.params.pipe(switchMap(({id})=>this.articuloService.getArticuloPorId(id))
@@ -37,15 +40,30 @@ export class AgregarComponent {
     // crear
       this.articuloService.agregarArticulo(this.articulo)
         .subscribe(resp=>{
+        this.router.navigate(['articulo/listado']);   
         console.log('respuesta',resp);
       })
    }
   }
   borrar(){
-    this.articuloService.eliminarArticulo(this.articulo.id!)
-     .subscribe( resp =>{
 
-       this.router.navigate(['articulo/listado']);
-     });
+    const dialog=this.matdialogarti.open(PopdialogartComponent,{
+      
+      width:'270px',
+      height:'170px',
+      data: {...this.articulo}
+    });
+
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if (result){
+          this.articuloService.eliminarArticulo(this.articulo.id!)
+          .subscribe( resp =>{
+
+          this.router.navigate(['articulo/listado']);
+          });
+        }
+      }
+    )
   }
 }

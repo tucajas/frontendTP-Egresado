@@ -3,6 +3,8 @@ import { Proveedor } from '../../interface';
 import { switchMap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProveedoresService } from '../../proveedores.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PopdialogComponent } from '../../popdialog/popdialog.component';
 
 @Component({
   selector: 'app-agregar',
@@ -20,7 +22,8 @@ export class AgregarComponent {
 
   constructor( private activateroute: ActivatedRoute,
                private proveedorService: ProveedoresService,
-               private router: Router) { }
+               private router: Router,
+               private matdialog: MatDialog) { }
 
   ngOnInit(): void {
   this.activateroute.params.pipe(switchMap(({id})=>this.proveedorService.getProveedorPorId(id))
@@ -44,14 +47,24 @@ export class AgregarComponent {
   }
   }
   borrar(){
-    this.proveedorService.eliminarProveedor(this.proveedor.id!)
-    .subscribe( resp =>{
 
-    this.router.navigate(['proveedores/listado']);
+    const dialog=this.matdialog.open(PopdialogComponent,{
+      
+      width:'270px',
+      height:'170px',
+      data: {...this.proveedor}
     });
+
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if (result){
+          this.proveedorService.eliminarProveedor(this.proveedor.id!)
+          .subscribe( resp =>{
+
+            this.router.navigate(['proveedores/listado']);
+          });
+        }
+      }
+    )
   }
-    
-
-
-
 }

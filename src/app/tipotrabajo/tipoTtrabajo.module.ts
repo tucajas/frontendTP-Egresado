@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TipotrabajoComponent } from './pages/tipotrabajo/tipotrabajo.component';
 import { MaterialModule } from '../materialDesigne/material.module';
 import { FormsModule } from '@angular/forms';
+import { PopdialogComponent } from './popdialog/popdialog.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     AgregarComponent,
     ListadoComponent,
     HomeComponent,
-    TipotrabajoComponent
+    TipotrabajoComponent,
+    PopdialogComponent
   ],
   imports: [
     CommonModule,

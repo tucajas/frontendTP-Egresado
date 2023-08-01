@@ -3,6 +3,8 @@ import { TipoTrabajo } from '../../interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TipotrabajoService } from '../../tipotrabajo.service';
 import { switchMap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { PopdialogComponent } from '../../popdialog/popdialog.component';
 
 @Component({
   selector: 'app-agregar',
@@ -17,7 +19,8 @@ export class AgregarComponent {
   }
   constructor( private activateroute: ActivatedRoute,
                private tipoTrabajoService: TipotrabajoService,
-               private router: Router) { }
+               private router: Router,
+               private matdialog: MatDialog) { }
 
   ngOnInit(): void {
   this.activateroute.params.pipe(switchMap(({id})=>this.tipoTrabajoService.getTipoTrabajoPorId(id))
@@ -36,23 +39,29 @@ export class AgregarComponent {
     // crear
     this.tipoTrabajoService.agregarTipoTrabajo(this.tipotrabajo)
       .subscribe(resp=>{
+        this.router.navigate(['tipoTrabajo/listado']);   
       console.log('respuesta',resp);
       })
     }
   }
   borrar(){
-  this.tipoTrabajoService.eliminarTipoTrabajo(this.tipotrabajo.id!)
-  .subscribe( resp =>{
+    const dialog=this.matdialog.open(PopdialogComponent,{
+      
+      width:'270px',
+      height:'170px',
+      data: {...this.tipotrabajo}
+    });
 
-  this.router.navigate(['tipoTrabajo/listado/']);
-  });
-  }
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if (result){
+        this.tipoTrabajoService.eliminarTipoTrabajo(this.tipotrabajo.id!)
+        .subscribe( resp =>{
 
-
-
-
-
-
-
-
+          this.router.navigate(['tipoTrabajo/listado/']);
+         });
+        }
+      }
+    )
+  }  
 }

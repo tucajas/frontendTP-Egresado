@@ -8,6 +8,7 @@ import { MaterialModule } from '../materialDesigne/material.module';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { OrdenComponent } from './pages/orden/orden.component';
+import { ClientesModule } from '../clientes/clientes.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OrdenComponent } from './pages/orden/orden.component';
     CommonModule,
     OrdenRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+   
   ]
 })
 export class OrdenModule { }

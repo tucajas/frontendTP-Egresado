@@ -7,6 +7,8 @@ import { ProveedoresService } from 'src/app/proveedores/proveedores.service';
 import { Proveedor } from 'src/app/proveedores/interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { PopdialogComponent } from '../../popdialog/popdialog.component';
 
 @Component({
   selector: 'app-agregar',
@@ -27,7 +29,8 @@ export class AgregarComponent {
                   private materiaPrimaService: MateriaPrimaService,
                   private router: Router,
                   private http: HttpClient,
-                  private proveedorServicio2:ProveedoresService) { }
+                  private proveedorServicio2:ProveedoresService,
+                  private matdialog: MatDialog) { }
                   
                  
     ngOnInit(): void {
@@ -51,41 +54,31 @@ export class AgregarComponent {
         console.log('entro a crear');
         console.log(this.proveedor);
         this.materiaPrimaService.agregarMateriaPrima(this.materiaPrima).subscribe(resp=>{
+          this.router.navigate(['materiaPrima/listado']);
           console.log('respuesta agregando',resp);
         })
       }
     }
     
     borrar(){
-    this.materiaPrimaService.eliminarMateriaPrima(this.materiaPrima.id!)
-    .subscribe( resp =>{
 
-    this.router.navigate(['materiaPrima/']);
-    });
+      const dialog=this.matdialog.open(PopdialogComponent,{
+      
+        width:'270px',
+        height:'170px',
+        data: {...this.materiaPrima}
+      });
+  
+      dialog.afterClosed().subscribe(
+        (result)=>{
+          if (result){
+           this.materiaPrimaService.eliminarMateriaPrima(this.materiaPrima.id!)
+           .subscribe( resp =>{
+
+              this.router.navigate(['materiaPrima/listado']);
+             });
+          }
+        }
+      )
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

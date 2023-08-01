@@ -9,6 +9,7 @@ import { MaterialModule } from '../materialDesigne/material.module';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { MateriaPrimaComponent } from './pages/materia-prima/materia-prima.component';
+import { PopdialogComponent } from './popdialog/popdialog.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MateriaPrimaComponent } from './pages/materia-prima/materia-prima.compo
     ListadoComponent,
     EstadosComponent,
     HomeComponent,
-    MateriaPrimaComponent
+    MateriaPrimaComponent,
+    PopdialogComponent
   ],
   imports: [
     CommonModule,
