@@ -4,6 +4,18 @@
         <mat-icon>menu</mat-icon> 
         
     </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/presupuesto/agregar"> 
+        
+        <span class="navegacion">Crear presupuesto</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/orden/agregar"> 
+        
+        <span class="navegacion">Agregar Orden de trabajo</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/orden/listado"> 
+        
+        <span class="navegacion">Buscar / listar Orden de trabajo</span>
+    </a>
     
     <a mat-list-item (click)="closeMenu()" routerLink="/clientes/agregar"> 
         
@@ -11,15 +23,7 @@
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/clientes/listado"> 
         
-        <span class="navegacion">Buscar Cliente / listado clientes</span>
-    </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/orden/agregar"> 
-        
-        <span class="navegacion">Crear Orden de trabajo</span>
-    </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/orden/listado"> 
-        
-        <span class="navegacion">Buscar Orden de trabajo</span>
+        <span class="navegacion">Buscar / listar clientes</span>
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/articulo/agregar"> 
         
@@ -27,11 +31,7 @@
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/articulo/listado"> 
         
-        <span class="navegacion">Buscar articulo</span>
-    </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/presupuesto/agregar"> 
-        
-        <span class="navegacion">Crear presupuesto</span>
+        <span class="navegacion">Buscar / listar articulo</span>
     </a>
     
     <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/agregar"> 
@@ -40,25 +40,25 @@
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/listado"> 
         
-        <span class="navegacion">listado tipo de trabajo</span>
+        <span class="navegacion">Buscar / listar tipo de trabajo</span>
     </a>
+    
+     <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar"> 
+         
+         <span class="navegacion">Agregar materia prima</span>
+     </a>
 
     <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/listado"> 
         
-        <span class="navegacion">Listado de materia prima</span>
-    </a>
-   
-    <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar"> 
-        
-        <span class="navegacion">Agregar materia prima</span>
-    </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/listado"> 
-        
-        <span class="navegacion">provedores listado / buscar</span>
+        <span class="navegacion">Buscar / Listar materia prima</span>
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/agregar"> 
         
-        <span class="navegacion">provedores agregar</span>
+        <span class="navegacion">Agregar provedores </span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/listado"> 
+        
+        <span class="navegacion">Buscar / listar proveedores</span>
     </a>
     
 </mat-nav-list>

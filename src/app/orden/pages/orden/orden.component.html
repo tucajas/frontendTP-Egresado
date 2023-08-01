@@ -6,12 +6,13 @@
         </mat-grid-tile>
     
     </mat-grid-list>
-    
+   
+
     <ng-template #divOrden >
-       <mat-card class="card">
+        <mat-card class="card" >
             <mat-card-content>
     
-                <mat-list>
+                <mat-list class="altura">
                      <span>NOMBRE</span>
                      <mat-list-item>{{ orden.cliente }}</mat-list-item>
                      <span>APELLIDO</span>
@@ -31,5 +32,6 @@
             <button mat-button (click)="regresar()" >regresar</button>
        </mat-card>
     </ng-template>
-</div>
+ 
 
+</div>    

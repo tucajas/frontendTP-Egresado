@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { OrdenComponent } from './pages/orden/orden.component';
 import { ClientesModule } from '../clientes/clientes.module';
+import { PopdialogComponent } from './popdialog/popdialog.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ClientesModule } from '../clientes/clientes.module';
     AgregarComponent,
     ListadoComponent,
     HomeComponent,
-    OrdenComponent
+    OrdenComponent,
+    PopdialogComponent
   ],
   imports: [
     CommonModule,

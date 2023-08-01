@@ -10,6 +10,8 @@ import { MateriaPrima } from 'src/app/materia-prima/interface';
 import { MateriaPrimaService } from 'src/app/materia-prima/servicios/materia-prima.service';
 import { TipoTrabajo } from 'src/app/tipotrabajo/interface';
 import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PopdialogComponent } from '../../popdialog/popdialog.component';
 
 @Component({
   selector: 'app-agregar',
@@ -42,7 +44,8 @@ export class AgregarComponent {
                private clienteService: ClientesService,
                private materiaPrima: MateriaPrimaService,
                private tipoTrabajoservice:TipotrabajoService,
-               private router: Router) { }
+               private router: Router,
+               private matdialog:MatDialog) { }
 
   ngOnInit(): void {
     this.activateroute.params.pipe(switchMap(({id})=>this.ordenService.getOrdenesPorId(id))
@@ -81,20 +84,24 @@ export class AgregarComponent {
     }
   }
   borrar(){
-    this.ordenService.eliminarOrden(this.orden.id!)
-     .subscribe( resp =>{
 
-       this.router.navigate(['orden/listado']);
-     });
+    const dialog=this.matdialog.open(PopdialogComponent,{
+      
+      width:'270px',
+      height:'170px',
+      data: {...this.materiaPrima}
+    });
+
+    dialog.afterClosed().subscribe(
+      (result)=>{
+        if (result){
+        this.ordenService.eliminarOrden(this.orden.id!)
+         .subscribe( resp =>{
+
+          this.router.navigate(['orden/listado']);
+          });
+        }
+      }
+    )
   }
-
-
-
-
-
-
-
-
-
-
 }

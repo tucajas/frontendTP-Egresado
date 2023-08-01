@@ -27,7 +27,7 @@ export class OrdenComponent {
         .subscribe( orden => this.orden = orden ) ;
     }
     regresar(){
-      this.router.navigate(['clientes/listado']);
+      this.router.navigate(['orden/listado']);
     }
 
 }
