@@ -1,18 +1,21 @@
-<div class="col-4" class="contenedor">
-    <div>
+<div class="margin">
+
+    <div class="col-4" class="contenedor" >
+        <div>
         <h1>IMPRESITO S.A.</h1>
         <h2>Presupuesto</h2>
         <br>
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between none">
-        <mat-form-field>
-            <label for="">vendedor</label>
-            <input matInput type="text">
-        </mat-form-field>
+        <!-- <mat-form-field> -->
+            <!-- <input matInput type="text" readonly="TRUE"> -->
+        <!-- </mat-form-field> -->
+        <H2>VALIDEZ POR 24HS</H2>
         
         <mat-form-field >
             <label >fecha</label>
-            <input matInput type="date">
+            <input matInput type="date" >
+            
         </mat-form-field>
     </div>
     <div>    
@@ -25,24 +28,24 @@
     
         <mat-form-field appearance="outline" >
             <label >cantidad</label>
-            <input matInput type="number" name="cantidad" [(ngModel)]="cantidad">
+            <input matInput type="number" min="0" name="cantidad" [(ngModel)]="cantidad">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
            <label >subtotal</label>
-            <input matInput type="number" [(ngModel)]="subtotal" >
+            <input matInput type="number" [(ngModel)]="subtotal" readonly="TRUE" >
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-            <label >descuento/recargo</label>
-             <input matInput type="number" [ngModel]="subtotal2" >
+            <label  >descuento/recargo</label>
+             <input matInput type="number" [ngModel]="subtotal2" readonly="TRUE">
          </mat-form-field>
     
         
     
         <mat-form-field appearance="outline">
             <label >metodo de pago</label>
-            <mat-select>
+            <mat-select >
                 <mat-option (click)="tarjeta()" value="tarjeta de credito">tarjeta de credito</mat-option>
                 <mat-option (click)="efectivo()"value="efectivo">efectivo</mat-option>
             </mat-select>
@@ -56,7 +59,10 @@
     
 
     <div  fxLayout="row" fxLayoutAlign="center center" >
-        <button mat-button (click)="sumar()">calcular</button>
+        <button class="btn btn-primary" (click)="sumar()">calcular</button>
+    </div>
+    <div>
+        <p></p>
     </div>
 
     <div>
@@ -69,17 +75,17 @@
 
         <mat-form-field appearance="outline" >
             <label >cantidad</label>
-            <input matInput type="number" name="cantidad2" [(ngModel)]="cantidad2">
+            <input matInput type="number" min="0" name="cantidad2" [(ngModel)]="cantidad2">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <label >subtotal</label>
-             <input matInput type="number" [(ngModel)]="subtotalb1" >
+             <input matInput type="number" [(ngModel)]="subtotalb1" readonly="TRUE">
          </mat-form-field>
 
          <mat-form-field appearance="outline">
             <label >descuento/recargo</label>
-             <input matInput type="number" [ngModel]="subtotalb2" >
+             <input matInput type="number" [ngModel]="subtotalb2" readonly="TRUE">
          </mat-form-field>
 
          <mat-form-field appearance="outline">
@@ -96,7 +102,9 @@
         </mat-form-field>    
     </div>
     <div  fxLayout="row" fxLayoutAlign="center center" >
-        <button mat-button (click)="sumar2()">calcular</button>
+        <button class="btn btn-primary" (click)="sumar2()">calcular</button>
     </div>
     
+</div>
+
 </div>

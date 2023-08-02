@@ -2,3 +2,10 @@
 button{
     background-color: cadetblue ;
 }
+.margin{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+mat-form-field {
+    margin-right: 12px;
+  }

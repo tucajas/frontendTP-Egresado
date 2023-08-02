@@ -38,11 +38,13 @@ export class AgregarComponent {
   if (this.proveedor.id){
       this.proveedorService.actualizarProveedor( this.proveedor )
       .subscribe( proveedor => console.log ( 'actualizando', proveedor ))
+      this.router.navigate(['proveedores/listado']);
   }else{
   // crear
     this.proveedorService.agregarProveedor(this.proveedor)
       .subscribe(resp=>{
       console.log('respuesta',resp);
+      this.router.navigate(['proveedores/listado']);
     })
   }
   }

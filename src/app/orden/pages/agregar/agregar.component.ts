@@ -65,6 +65,7 @@ export class AgregarComponent {
     if (this.orden.id){
       this.ordenService.actualizarOrden( this.orden )
         .subscribe( orden => console.log ( 'actualizando', orden ))
+        this.router.navigate(['orden/listado'])
     }else{
       // crear
       

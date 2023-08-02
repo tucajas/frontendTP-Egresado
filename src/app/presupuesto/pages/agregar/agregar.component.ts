@@ -5,12 +5,15 @@ import { ArticuloService } from 'src/app/articulo/servicios/articulo.service';
 import { TipoTrabajo } from 'src/app/tipotrabajo/interface';
 import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
 
+
 @Component({
   selector: 'app-agregar',
   templateUrl: './agregar.component.html',
   styleUrls: ['./agregar.component.css']
 })
 export class AgregarComponent {
+
+  
 
   precioVenta:number=0;
   precioVenta2:number=0;

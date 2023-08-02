@@ -13,13 +13,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PieComponent } from './shared/pie/pie.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     
     EncabezadoComponent,
     MenuComponent,
-    PieComponent
+    PieComponent,
+   
   ],
   imports: [
     BrowserModule,

@@ -35,12 +35,13 @@ export class AgregarComponent {
     if (this.tipotrabajo.id){
     this.tipoTrabajoService.actualizarTipoTrabajo( this.tipotrabajo )
     .subscribe( tipotrabajo => console.log ( 'actualizando', this.tipotrabajo ))
+    this.router.navigate(['tipoTrabajo/listado']); 
     }else{
     // crear
     this.tipoTrabajoService.agregarTipoTrabajo(this.tipotrabajo)
       .subscribe(resp=>{
+        console.log('respuesta',resp);
         this.router.navigate(['tipoTrabajo/listado']);   
-      console.log('respuesta',resp);
       })
     }
   }

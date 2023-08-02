@@ -22,10 +22,10 @@
         <td mat-cell *matCellDef="let materiaPrima"> {{materiaPrima.descripcion}} </td>
       </ng-container>
          <!-- Name Column -->
-         <ng-container matColumnDef="stock">
+         <!-- <ng-container matColumnDef="stock">
           <th mat-header-cell *matHeaderCellDef> stock </th>
           <td mat-cell *matCellDef="let materiaPrima"> {{materiaPrima.stock}} </td>
-        </ng-container>
+        </ng-container> -->
            <!-- Name Column -->
       <ng-container matColumnDef="precioCosto">
         <th mat-header-cell *matHeaderCellDef> precio costo </th>
@@ -33,16 +33,11 @@
       </ng-container>
          <!-- listado con conversion de id del proveedor para q se vea el nombre-->
          
+      <ng-container matColumnDef="proveedor_nombreDeEmpresa">
+          <th mat-header-cell *matHeaderCellDef> nombre de empresa </th>
+          <td mat-cell *matCellDef="let materiaPrima">{{materiaPrima.proveedor_nombreDeEmpresa}} </td>
+      </ng-container>
 
-        <ng-container matColumnDef="proveedor" >
-          <th mat-header-cell *matHeaderCellDef> proveedor </th>
-
-          <td mat-cell *matCellDef="let materiaPrima"  >
-            <ng-template [ngIf]="materiaPrima.proveedor== 1">acuarela</ng-template>
-            <ng-template [ngIf]="materiaPrima.proveedor== 2">rayuela</ng-template>
-            <ng-template [ngIf]="materiaPrima.proveedor== 3">Third</ng-template>
-          </td>
-        </ng-container>
 
         
 

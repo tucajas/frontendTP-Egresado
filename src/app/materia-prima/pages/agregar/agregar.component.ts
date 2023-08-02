@@ -23,7 +23,7 @@ export class AgregarComponent {
     precioCosto:0,
     proveedor: '',
   }
-  proveedor: Proveedor[] =[];
+  proveedor2: Proveedor[] =[];
 
     constructor(  private activateroute: ActivatedRoute,
                   private materiaPrimaService: MateriaPrimaService,
@@ -36,7 +36,8 @@ export class AgregarComponent {
     ngOnInit(): void {
       this.activateroute.params.pipe(switchMap(({id})=>this.materiaPrimaService.getMateriaPrimaPorId(id))
       ).subscribe(materiaPrima =>this.materiaPrima=materiaPrima);
-      this.proveedorServicio2.getProveedores().subscribe(proveedor=>this.proveedor=proveedor);
+
+      this.proveedorServicio2.getProveedores().subscribe(proveedor2=>this.proveedor2=proveedor2);
       
     }
     guardar(){
@@ -45,17 +46,17 @@ export class AgregarComponent {
       }
       // actualizar
       if (this.materiaPrima.id){
-        console.log('entro a actualizar ')
-        this.materiaPrimaService.actualizarMateriaPrima( this.materiaPrima )
-        .subscribe( materiaPrima => console.log ( 'actualizando', materiaPrima ))
+          this.materiaPrimaService.actualizarMateriaPrima( this.materiaPrima )
+            .subscribe( materiaPrima => console.log ( 'actualizando', materiaPrima ))
+             this.router.navigate(['materiaPrima/listado']);
       }
       else{
         // crear
-        console.log('entro a crear');
-        console.log(this.proveedor);
-        this.materiaPrimaService.agregarMateriaPrima(this.materiaPrima).subscribe(resp=>{
-          this.router.navigate(['materiaPrima/listado']);
-          console.log('respuesta agregando',resp);
+       
+          this.materiaPrimaService.agregarMateriaPrima(this.materiaPrima)
+            .subscribe(resp=>{
+              console.log('respuesta agregando',resp);
+               this.router.navigate(['materiaPrima/listado']);
         })
       }
     }

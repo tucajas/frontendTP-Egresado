@@ -46,8 +46,8 @@ export class AgregarComponent {
       // crear
       this.clienteService.agregarCliente(this.cliente)
         .subscribe(resp=>{
-         this.router.navigate(['clientes/listado']); 
-         console.log('respuesta',resp);
+          console.log('respuesta',resp);
+          this.router.navigate(['clientes/listado']); 
       })
     }
   }

@@ -12,17 +12,17 @@ import { ProveedoresService } from 'src/app/proveedores/proveedores.service';
 export class ListadoComponent implements OnInit {
 
   dataSource:any;
-  displayedColumns:string[]=['id','descripcion','precioCosto','proveedor','editar','ver'];
-  proveedor: Proveedor[]=[];
+  displayedColumns:string[]=['id','descripcion','precioCosto','proveedor_nombreDeEmpresa','editar','ver'];
+  // proveedor: Proveedor[]=[];
 
 
   constructor( private materiaP: MateriaPrimaService,
-               private proveedorserv:ProveedoresService ) { }
+              ) { }
   ngOnInit(): void {
 
     this.materiaP.getMateriaPrima()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);});
-    this.proveedorserv.getProveedores().subscribe(proveedor => this.proveedor=proveedor);
+    // this.proveedorserv.getProveedores().subscribe(proveedor => this.proveedor=proveedor);
   }
 
 
