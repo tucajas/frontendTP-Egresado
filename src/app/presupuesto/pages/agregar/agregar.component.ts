@@ -32,6 +32,8 @@ export class AgregarComponent {
   total:number=0;
   total2:number=0;
 
+  totalfinal:number=0;
+
 
   
 
@@ -72,6 +74,9 @@ export class AgregarComponent {
    
   }
   
+  calculofinal(){
+    this.totalfinal=this.total+this.total2;
+  }
 
   
 

@@ -5,11 +5,13 @@
         <h1>IMPRESITO S.A.</h1>
         <h2>Presupuesto</h2>
         <br>
+        
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between none">
-        <!-- <mat-form-field> -->
-            <!-- <input matInput type="text" readonly="TRUE"> -->
-        <!-- </mat-form-field> -->
+        <mat-form-field> 
+             <button class="btn btn-primary" (click)="calculofinal()">CALCULO FINAL</button>
+             <input matInput type="number" readonly="TRUE" [(ngModel)]="totalfinal"> 
+        </mat-form-field> 
         <H2>VALIDEZ POR 24HS</H2>
         
         <mat-form-field >
@@ -104,7 +106,11 @@
     <div  fxLayout="row" fxLayoutAlign="center center" >
         <button class="btn btn-primary" (click)="sumar2()">calcular</button>
     </div>
-    
+   
 </div>
 
-</div>
+
+<!-- <div  fxLayout="row" fxLayoutAlign="center center" >
+    <button class="btn btn-primary" (click)="calculofinal()">calcular</button>
+</div> -->
+
