@@ -8,4 +8,15 @@ button{
 }
 mat-form-field {
     margin-right: 12px;
+    margin-top: 20px;
+    margin-left: 20px;
   }
+.color{
+    background-color: aqua;
+}
+.color2{
+    background-color: rgb(147, 165, 182);
+}
+h3{
+    text-align: center;
+}

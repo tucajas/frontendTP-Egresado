@@ -16,24 +16,33 @@ export class AgregarComponent {
   
 
   precioVenta:number=0;
+  cantidad:number=0;
+  subtotal:number=0;
+  descuentoEfectivo:number=0;
+  //valores del option descuento por efectivo
+  porcenDesc:number=0;
+  porcentaje:number=0;
+
+  total:number=0;
+  
+
+
   precioVenta2:number=0;
   
-  cantidad:number=0;
   cantidad2:number=0;
 
   articulos:Articulo[]=[];
   servicio:TipoTrabajo[]=[];
   
-  subtotal:number=0;
   subtotalb1:number=0;
   subtotal2:number=0;
   subtotalb2:number=0;
   subtotal3:number=0;
-  total:number=0;
   total2:number=0;
-
   totalfinal:number=0;
 
+  porcentaje2:number=0;
+  porcenDesc2:number=0;
 
   
 
@@ -43,15 +52,17 @@ export class AgregarComponent {
     this.articuloService.getArticulo().subscribe( articulos => this.articulos=articulos);
 
   }
-  tarjeta(){
-    this.subtotal2=this.subtotal*25/100;
-    this.total=this.subtotal+this.subtotal2;
-  }
   efectivo(){
-    const porcenDesc=this.subtotal*80/100;
-    this.subtotal2=this.subtotal-porcenDesc;
-    this.total=this.subtotal-this.subtotal2;
+    this.porcentaje=(this.porcenDesc/100)*this.subtotal;
+    this.total=this.subtotal-this.porcentaje;
   }
+  tarjeta(){
+    this.porcentaje2=(this.porcenDesc2/100)*this.subtotal;
+    this.total=this.subtotal+this.porcentaje2;
+  }
+
+
+
 
   tarjeta2(){
     this.subtotalb2=this.subtotalb1*25/100;

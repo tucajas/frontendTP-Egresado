@@ -19,7 +19,10 @@ export class ListadoComponent implements OnInit {
   constructor( private materiaP: MateriaPrimaService,
               ) { }
   ngOnInit(): void {
-
+    
+    this.materiaP.getMateriaPrima().subscribe(resp=>{
+    console.log('respuesta',resp)});
+    
     this.materiaP.getMateriaPrima()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);});
     // this.proveedorserv.getProveedores().subscribe(proveedor => this.proveedor=proveedor);

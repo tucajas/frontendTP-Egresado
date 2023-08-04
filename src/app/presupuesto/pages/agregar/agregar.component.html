@@ -12,7 +12,15 @@
              <button class="btn btn-primary" (click)="calculofinal()">CALCULO FINAL</button>
              <input matInput type="number" readonly="TRUE" [(ngModel)]="totalfinal"> 
         </mat-form-field> 
+        <mat-form-field> 
+            <button class="btn btn-primary" (click)="calculofinal()">CALCULO FINAL</button>
+           <mat-select>
+                <mat-option>1</mat-option>
+                <mat-option>2</mat-option>
+           </mat-select> 
+       </mat-form-field> 
         <H2>VALIDEZ POR 24HS</H2>
+
         
         <mat-form-field >
             <label >fecha</label>
@@ -20,48 +28,64 @@
             
         </mat-form-field>
     </div>
-    <div>    
-        <mat-form-field appearance="outline">
-            <label >servicio</label>
-            <mat-select  [(ngModel)]="precioVenta">
-                <mat-option *ngFor="let s of servicio" [value]="s.precio">{{s.descripcion}}</mat-option>
-            </mat-select>
-        </mat-form-field>
-    
-        <mat-form-field appearance="outline" >
-            <label >cantidad</label>
-            <input matInput type="number" min="0" name="cantidad" [(ngModel)]="cantidad">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-           <label >subtotal</label>
-            <input matInput type="number" [(ngModel)]="subtotal" readonly="TRUE" >
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <label  >descuento/recargo</label>
-             <input matInput type="number" [ngModel]="subtotal2" readonly="TRUE">
-         </mat-form-field>
-    
+    <div fxLayout="row">
+         
+        <div fxLayout="col-6" class="color">    
+            <mat-form-field appearance="outline" >
+                <label >servicio</label>
+                <mat-select  [(ngModel)]="precioVenta">
+                    <mat-option *ngFor="let s of servicio" [value]="s.precio">{{s.descripcion}}</mat-option>
+                </mat-select>
+            </mat-form-field>
         
+            <mat-form-field appearance="outline" >
+                <label >cantidad</label>
+                <input matInput type="number" min="0" name="cantidad" [(ngModel)]="cantidad">
+            </mat-form-field>
     
-        <mat-form-field appearance="outline">
-            <label >metodo de pago</label>
-            <mat-select >
-                <mat-option (click)="tarjeta()" value="tarjeta de credito">tarjeta de credito</mat-option>
-                <mat-option (click)="efectivo()"value="efectivo">efectivo</mat-option>
-            </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" >
-            <label >total</label>
-            <input matInput type="number" [(ngModel)]="total">
+            <mat-form-field appearance="outline">
+               <label >PRECIO LISTA</label>
+                <input matInput type="number" [(ngModel)]="subtotal" readonly="TRUE" >
+            </mat-form-field>
+        </div>
+        <div fxLayout="col-6" class="color2">
+            <mat-form-field appearance="outline">
+                <label >% desc. por efectivo</label>
+                <mat-select [(ngModel)]="porcenDesc" >
+                    <mat-option value="0">ninguno</mat-option>
+                    <mat-option  value="10">10</mat-option>
+                    <mat-option   value="20">20</mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+            <!-- <mat-form-field appearance="outline">
+                <label >personalizar descuento</label>
+                <input matInput type="number" [(ngModel)]="descuentoEfectivo">
+            </mat-form-field> -->
+            <mat-form-field appearance="outline">
+                <label  >% recargo por tarjeta</label>
+                <mat-select [(ngModel)]="porcenDesc2" >
+                    <mat-option value="0">ninguno</mat-option>
+                    <mat-option  value="10">10</mat-option>
+                    <mat-option  value="20">20</mat-option>
+                </mat-select>
+            </mat-form-field>
+                
+        </div>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field  >
+                <label >total item 1</label>
+                <input matInput type="number" [(ngModel)]="total">
         </mat-form-field>    
+
     </div>
     
 
     <div  fxLayout="row" fxLayoutAlign="center center" >
-        <button class="btn btn-primary" (click)="sumar()">calcular</button>
+        <button class="btn btn-primary" (click)="sumar()">PRECIO LISTA</button>
+        <button class="btn btn-primary" (click)="efectivo()">EFECTIVO</button>
+        <button class="btn btn-primary" (click)="tarjeta()">TARJETA</button>
     </div>
     <div>
         <p></p>
