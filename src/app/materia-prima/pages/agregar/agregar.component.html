@@ -45,23 +45,15 @@
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>proveedor</mat-label>
-                <mat-select  [(ngModel)]="materiaPrima.proveedor">
-                    <mat-option  *ngFor="let p of proveedor2" [value]="p.id">{{p.nombreDeEmpresa }}</mat-option>
+                <mat-select  [(ngModel)]="materiaPrima.proveedor" multiple>
+                    <mat-option  *ngFor="let p  of proveedor2" [value]="p.id">{{p.nombreDeEmpresa }}</mat-option>
                 </mat-select>
             </mat-form-field>
             
-        
-        </div>
-        <!-- <div 
-            fxLayout="row" 
-            fxLayoutGap="20px"
-            fxLayout.xs="column">
             
-            <mat-form-field fxFlex="100" fxLayout.xs="column">
-                <mat-label>stock</mat-label>
-                <input matInput type="number" [(ngModel)]="materiaPrima.stock" required>
-            </mat-form-field>
-        </div> -->
+        </div>
+        <pre>{{materiaPrima|json}}</pre>
+       
         <div fxLayout="row" fxLayoutAlign="end center" >
             <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
             

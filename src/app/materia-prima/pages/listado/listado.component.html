@@ -33,10 +33,12 @@
       </ng-container>
          <!-- listado con conversion de id del proveedor para q se vea el nombre-->
          
-      <ng-container matColumnDef="proveedor_nombreDeEmpresa">
+      <ng-container matColumnDef="proveedor">
           <th mat-header-cell *matHeaderCellDef> nombre de empresa </th>
-          <td mat-cell *matCellDef="let materiaPrima">{{materiaPrima.proveedor_nombreDeEmpresa}} </td>
+          <td mat-cell *matCellDef="let materiaPrima" >  {{materiaPrima.proveedor}} </td>
+          
       </ng-container>
+      
 
 
         

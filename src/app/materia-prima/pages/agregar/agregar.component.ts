@@ -19,9 +19,8 @@ export class AgregarComponent {
 
   materiaPrima: MateriaPrima={
     descripcion:'',
-    stock: 0,
     precioCosto:0,
-    proveedor: '',
+    proveedor: [],
   }
   proveedor2: Proveedor[] =[];
 

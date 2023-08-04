@@ -14,8 +14,7 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent {
-  // cliente:Cliente[]=[];
-  // orden:Orden[]=[];
+ 
   dataSource:any;
   // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
@@ -26,6 +25,8 @@ export class ListadoComponent {
     
  
   ngOnInit(): void {
+
+    
 
     this.ordenes_service.getOrdenes()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
@@ -39,7 +40,10 @@ export class ListadoComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    
   }
+ 
+  
   borrar(cod: number) {
     if (confirm("Realmente quiere borrarlo?")) {
       // this.dataSource.splice(cod, 1);
