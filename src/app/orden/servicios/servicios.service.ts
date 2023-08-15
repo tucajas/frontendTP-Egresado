@@ -14,6 +14,7 @@ export class ServiciosService {
   getOrdenes():Observable<Orden[]>{
     return this.http.get<Orden[]>('http://127.0.0.1:8000/orden/list/')
   }
+  // estoy agregando list a getordenporid para modificar la ruta
   getOrdenesPorId(id:string):Observable<Orden>{
     return this.http.get<Orden>( ` http://127.0.0.1:8000/orden/${ id }`);
   }
