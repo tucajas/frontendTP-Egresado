@@ -2,12 +2,17 @@
 <mat-nav-list >
     <a mat-list-item (click)="closeMenu()" routerLink="/"> 
         <mat-icon>menu</mat-icon> 
-        
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/presupuesto/agregar"> 
-        
-        <span class="navegacion">Crear presupuesto</span>
+       <span class="navegacion">Crear presupuesto</span>
     </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/listado"> 
+        <span class="navegacion">listado porcentaje</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/agregar"> 
+        <span class="navegacion">agregar porcentaje</span>
+    </a>
+
     <a mat-list-item (click)="closeMenu()" routerLink="/orden/agregar"> 
         
         <span class="navegacion">Agregar Orden de trabajo</span>

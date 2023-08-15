@@ -1,0 +1,49 @@
+<p>listado works!</p>
+
+
+<div >
+  <mat-form-field >
+    <mat-label>Filtro de busqueda</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> id </th>
+          <td mat-cell *matCellDef="let descuento"> {{descuento.id}} </td>
+        </ng-container>
+       
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="titulo">
+          <th mat-header-cell *matHeaderCellDef> titulo </th>
+          <td mat-cell *matCellDef="let descuento"> {{descuento.titulo}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="desc">
+          <th mat-header-cell *matHeaderCellDef> descuento </th>
+          <td mat-cell *matCellDef="let descuento"> {{descuento.desc}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="editar">
+          <th mat-header-cell *matHeaderCellDef> editar </th>
+          <td mat-cell *matCellDef="let descuento"> <button mat-button [routerLink]="['/porcentajes/editar/', descuento.id ]" >editar</button> </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="ver">
+          <th mat-header-cell *matHeaderCellDef> ver mas </th>
+          <td mat-cell *matCellDef="let descuento"> <button mat-button [routerLink]="['/porcentajes/', descuento.id ]" >ver mas</button> </td>
+        </ng-container>
+      
+        
+      
+       
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      
+
+
+</div>

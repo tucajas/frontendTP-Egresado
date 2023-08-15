@@ -8,6 +8,7 @@ import { JsonPipe } from '@angular/common';
 
 
 
+
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -15,13 +16,17 @@ import { JsonPipe } from '@angular/common';
 })
 export class ListadoComponent {
  
+  
+
+
   dataSource:any;
   // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','detalle','estado','editar','ver'];
   constructor( private ordenes_service: ServiciosService,
                private clienteservicio: ClientesService,
-               private ordenserv:ServiciosService ) { }
+               private ordenserv:ServiciosService,
+                ) { }
     
  
   ngOnInit(): void {
@@ -30,6 +35,8 @@ export class ListadoComponent {
 
     this.ordenes_service.getOrdenes()
     .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
+
+    
 
     // this.clienteservicio.getCliente().subscribe(resp => this.cliente = resp)
     // this.ordenserv.getOrdenes().subscribe(resp2 => this.orden=resp2);

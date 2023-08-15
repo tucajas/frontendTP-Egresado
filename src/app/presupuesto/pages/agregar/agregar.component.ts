@@ -2,8 +2,12 @@ import { Component } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Articulo } from 'src/app/articulo/interface';
 import { ArticuloService } from 'src/app/articulo/servicios/articulo.service';
+import { Descuento } from 'src/app/porcentajes/interface';
+import { DescuentoServiciosService } from 'src/app/porcentajes/pages/servicios/descuento-servicios.service';
 import { TipoTrabajo } from 'src/app/tipotrabajo/interface';
 import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
+
+
 
 
 @Component({
@@ -13,7 +17,7 @@ import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
 })
 export class AgregarComponent {
 
-  
+ 
 
   precioVenta:number=0;
   cantidad:number=0;
@@ -28,9 +32,10 @@ export class AgregarComponent {
 
 
   precioVenta2:number=0;
-  
   cantidad2:number=0;
 
+  // servicios
+  descuento:Descuento[]=[];
   articulos:Articulo[]=[];
   servicio:TipoTrabajo[]=[];
   
@@ -46,10 +51,17 @@ export class AgregarComponent {
 
   
 
-  constructor( private articuloService: ArticuloService,private servicios: TipotrabajoService ) { }
+  constructor( 
+                private articuloService: ArticuloService,
+                private servicios: TipotrabajoService,
+                private descuentoServ:DescuentoServiciosService
+              ) { }
+
   ngOnInit(): void {
     this.servicios.getTipoTrabajo().subscribe(resp=>this.servicio=resp);
     this.articuloService.getArticulo().subscribe( articulos => this.articulos=articulos);
+    this.descuentoServ.getDescuento().subscribe(resp=>this.descuento=resp);
+    
 
   }
   efectivo(){

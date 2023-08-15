@@ -36,9 +36,13 @@ const routes: Routes = [
     loadChildren: ()=> import ('./tipotrabajo/tipoTtrabajo.module').then (m=>m.TipoTrabajoModule)
   },
   {
+    path:'porcentajes',
+    loadChildren: ()=>import('./porcentajes/porcentajes.module').then(m=>m.PorcentajesModule)
+  },
+  {
     path: 'graficos',
     loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
-  }
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,32 @@
+<p>porcentaje works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+
+
+    
+    <mat-grid-list cols="1" *ngIf="!descuento; else divDescuento">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    
+    </mat-grid-list>
+    
+    <ng-template #divDescuento>
+       <mat-card class="card">
+            <mat-card-title>Descuento</mat-card-title>
+           <mat-list>
+                <span>ID</span>
+                <mat-list-item>{{ descuento.id }}</mat-list-item>
+                <span>DESCRIPCION</span>
+                <mat-list-item>{{ descuento.titulo }}</mat-list-item>
+                <span>PRECIO COSTO</span>
+                <mat-list-item>{{ descuento.desc }}</mat-list-item>
+                
+                
+                <button mat-button (click)="regresar()" >regresar</button>
+           </mat-list>
+
+       </mat-card>
+    </ng-template>
+</div>
+
+
