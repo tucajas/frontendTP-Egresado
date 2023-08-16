@@ -18,16 +18,36 @@ export class ListadoComponent {
  
   
 
+  getPriorityClass(priority: string) {
+    if (priority === '1') {
+      return 'priority-high';
+    } else if (priority === '2') {
+      return 'priority-medium';
+    } else {
+      return 'priority-low';
+    }
+  }
+  getEstadoClass(priority: string) {
+    if (priority === 'finalizado') {
+      return 'priority-low';
+    } else if (priority === 'en proceso') {
+      return 'priority-medium';
+    } else {
+      return 'priority-low';
+    }
+  }
+             
 
   dataSource:any;
   // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
-    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','detalle','estado','editar','ver'];
+    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','detalle','estado','prioridad','editar','ver'];
   constructor( private ordenes_service: ServiciosService,
                private clienteservicio: ClientesService,
                private ordenserv:ServiciosService,
                 ) { }
-    
+  
+
  
   ngOnInit(): void {
 

@@ -15,7 +15,7 @@ export class AgregarComponent {
 
   proveedor: Proveedor ={
 
-      nombreDeEmpresa:'',
+      nombre:'',
       direccion:'',
       telefono:'',
   }
@@ -31,7 +31,7 @@ export class AgregarComponent {
 
   }
   guardar(){
-    if (this.proveedor.nombreDeEmpresa.trim().length===0){
+    if (this.proveedor.nombre.trim().length===0){
   return
   }
   // actualizar

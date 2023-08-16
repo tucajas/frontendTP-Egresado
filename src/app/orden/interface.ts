@@ -7,4 +7,5 @@ export interface Orden{
     fechaEntrega:string;
     detalle:string;
     estado:string;
+    prioridad:string;
 }

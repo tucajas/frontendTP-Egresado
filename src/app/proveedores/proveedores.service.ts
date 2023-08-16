@@ -11,7 +11,7 @@ export class ProveedoresService {
   constructor(private http:HttpClient) { }
 
   getProveedores():Observable<Proveedor[]>{
-    return this.http.get<Proveedor[]>('http://127.0.0.1:8000/proveedores/list/');
+    return this.http.get<Proveedor[]>('http://127.0.0.1:8000/materiaPrima/proveedores/');
   }
   getProveedorPorId(id:string):Observable<Proveedor>{
     return this.http.get<Proveedor>( ` http://127.0.0.1:8000/proveedores/${ id }`);

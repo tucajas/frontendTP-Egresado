@@ -11,10 +11,11 @@ export class ServiciosService {
 
   constructor(private http: HttpClient) { }
   
+  // listar orden esta ok
   getOrdenes():Observable<Orden[]>{
     return this.http.get<Orden[]>('http://127.0.0.1:8000/orden/list/')
   }
-  // estoy agregando list a getordenporid para modificar la ruta
+  // ver mas en orden esta ok
   getOrdenesPorId(id:string):Observable<Orden>{
     return this.http.get<Orden>( ` http://127.0.0.1:8000/orden/${ id }`);
   }
@@ -23,6 +24,7 @@ export class ServiciosService {
     return this.http.post<Orden>('http://127.0.0.1:8000/orden/list/',orden );
   }
 
+  // actualizar esta ok
   actualizarOrden(orden: Orden):Observable<Orden>{
     return this.http.put<Orden>(`http://127.0.0.1:8000/orden/${orden.id}`,orden );
   }

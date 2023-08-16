@@ -19,10 +19,11 @@ export class AgregarComponent {
 
   materiaPrima: MateriaPrima={
     descripcion:'',
-    precioCosto:0,
-    proveedor: [],
+    precio:0,
+    nombre: [],
   }
   proveedor2: Proveedor[] =[];
+  materiaprima2:MateriaPrima[]=[];
 
     constructor(  private activateroute: ActivatedRoute,
                   private materiaPrimaService: MateriaPrimaService,
@@ -36,13 +37,15 @@ export class AgregarComponent {
       this.activateroute.params.pipe(switchMap(({id})=>this.materiaPrimaService.getMateriaPrimaPorId(id))
       ).subscribe(materiaPrima =>this.materiaPrima=materiaPrima);
 
-      this.proveedorServicio2.getProveedores().subscribe(proveedor2=>this.proveedor2=proveedor2);
+      this.proveedorServicio2.getProveedores().subscribe(respuesta1=>this.proveedor2=respuesta1);
+      this.materiaPrimaService.getMateriaPrima2().subscribe(respuesta=>this.materiaprima2=respuesta);
+
       
     }
     guardar(){
-      if (this.materiaPrima.descripcion.trim().length===0){
-        return
-      }
+      // if (this.materiaPrima.descripcion.trim().length===0){
+      //   return
+      // }
       // actualizar
       if (this.materiaPrima.id){
           this.materiaPrimaService.actualizarMateriaPrima( this.materiaPrima )

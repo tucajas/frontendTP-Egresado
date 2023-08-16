@@ -30,10 +30,12 @@ export class AgregarComponent {
     fechaEntrega: '',
     detalle: '',
     estado: '',
+    prioridad:'',
   }
   cliente:Cliente[]=[];
   materiaprima: MateriaPrima[]=[];
   tipoTrabajo: TipoTrabajo[]=[];
+  
   
   
   

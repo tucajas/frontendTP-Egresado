@@ -1,6 +1,6 @@
 export interface Proveedor{
     id?:number;
-    nombreDeEmpresa:String;
+    nombre:String;
     direccion:String;
     telefono:String;
 }

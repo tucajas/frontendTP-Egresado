@@ -29,13 +29,13 @@
            <!-- Name Column -->
       <ng-container matColumnDef="precioCosto">
         <th mat-header-cell *matHeaderCellDef> precio costo </th>
-        <td mat-cell *matCellDef="let materiaPrima"> {{materiaPrima.precioCosto}} </td>
+        <td mat-cell *matCellDef="let materiaPrima"> {{materiaPrima.precio}} </td>
       </ng-container>
          <!-- listado con conversion de id del proveedor para q se vea el nombre-->
          
       <ng-container matColumnDef="proveedor">
           <th mat-header-cell *matHeaderCellDef> nombre de empresa </th>
-          <td mat-cell *matCellDef="let materiaPrima" >  {{materiaPrima.proveedor}} </td>
+          <td mat-cell *matCellDef="let materiaPrima" >  {{materiaPrima.nombre}} </td>
           
       </ng-container>
       

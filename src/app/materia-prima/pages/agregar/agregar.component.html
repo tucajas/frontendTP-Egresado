@@ -20,8 +20,11 @@
             fxLayout.xs="column">
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
-                <mat-label>descripcion</mat-label>
-                <input matInput type="text" [(ngModel)]="materiaPrima.descripcion" required>
+                <mat-label>descripcion materia prima</mat-label>
+                <mat-select  [(ngModel)]="materiaPrima.descripcion" >
+                    <mat-option  *ngFor="let m  of materiaprima2" [value]="m.id">{{m.descripcion }}</mat-option>
+                </mat-select>
+                
             </mat-form-field>
         
         
@@ -33,7 +36,7 @@
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>precio costo</mat-label>
-                <input matInput type="number" [(ngModel)]="materiaPrima.precioCosto" required>
+                <input matInput type="number" [(ngModel)]="materiaPrima.precio" required>
             </mat-form-field>
         
         
@@ -45,8 +48,8 @@
             
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>proveedor</mat-label>
-                <mat-select  [(ngModel)]="materiaPrima.proveedor" multiple>
-                    <mat-option  *ngFor="let p  of proveedor2" [value]="p.id">{{p.nombreDeEmpresa }}</mat-option>
+                <mat-select  [(ngModel)]="materiaPrima.nombre" >
+                    <mat-option  *ngFor="let p  of proveedor2" [value]="p.id">{{p.nombre}}</mat-option>
                 </mat-select>
             </mat-form-field>
             
