@@ -14,11 +14,14 @@ export class ProveedoresService {
     return this.http.get<Proveedor[]>('http://127.0.0.1:8000/materiaPrima/proveedores/');
   }
   getProveedorPorId(id:string):Observable<Proveedor>{
-    return this.http.get<Proveedor>( ` http://127.0.0.1:8000/proveedores/${ id }`);
+    return this.http.get<Proveedor>( ` http://127.0.0.1:8000/materiaPrima/proveedores/${ id }`);
   }
 
   agregarProveedor(proveedor: Proveedor):Observable<Proveedor>{
     return this.http.post<Proveedor>('http://127.0.0.1:8000/proveedores/list/',proveedor );
+  }
+  agregarProveedor2(proveedor: Proveedor):Observable<Proveedor>{
+    return this.http.post<Proveedor>('http://127.0.0.1:8000/materiaPrima/proveedores/',proveedor );
   }
 
   actualizarProveedor(proveedor: Proveedor):Observable<Proveedor>{

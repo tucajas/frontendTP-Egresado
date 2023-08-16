@@ -41,7 +41,7 @@ export class AgregarComponent {
       this.router.navigate(['proveedores/listado']);
   }else{
   // crear
-    this.proveedorService.agregarProveedor(this.proveedor)
+    this.proveedorService.agregarProveedor2(this.proveedor)
       .subscribe(resp=>{
       console.log('respuesta',resp);
       this.router.navigate(['proveedores/listado']);
