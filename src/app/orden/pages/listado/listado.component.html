@@ -53,9 +53,16 @@
     </ng-container>
 
     <ng-container matColumnDef="fechaEntrega">
-      <th mat-header-cell *matHeaderCellDef> fecha de entrega </th>
+      <th mat-header-cell *matHeaderCellDef> fecha </th>
       <td mat-cell *matCellDef="let orden"> {{orden.fechaEntrega}} </td>
+    
     </ng-container>
+
+    <ng-container matColumnDef="antiguedad">
+      <th mat-header-cell *matHeaderCellDef> Antigüedad </th>
+      <td mat-cell *matCellDef="let row"> {{ row.antiguedad }} días </td>
+    </ng-container>
+
 
     <ng-container matColumnDef="detalle">
       <th mat-header-cell *matHeaderCellDef> detalle </th>
@@ -100,14 +107,6 @@
 
 </div>
 <div>
-  <!-- <table>
-    <tr *ngFor="let c of cliente">
-      <th>ID</th>
-      <td >{{c.id}}</td>
-
-      <th>nombre</th>
-      <td >{{c.nombre}}</td>
-    </tr>
-  </table> -->
+  
 
 </div>

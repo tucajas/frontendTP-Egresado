@@ -5,6 +5,7 @@ export interface Orden{
     materiaPrima: string;
     cantidad: number;
     fechaEntrega:string;
+    antiguedad: number;
     detalle:string;
     estado:string;
     prioridad:string;

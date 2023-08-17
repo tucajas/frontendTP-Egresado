@@ -28,6 +28,7 @@ export class AgregarComponent {
     materiaPrima: '',
     cantidad: 0,
     fechaEntrega: '',
+    antiguedad:0,
     detalle: '',
     estado: '',
     prioridad:'',

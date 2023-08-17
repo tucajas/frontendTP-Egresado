@@ -41,7 +41,7 @@ export class ListadoComponent {
   dataSource:any;
   // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
-    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','detalle','estado','prioridad','editar','ver'];
+    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','antiguedad','detalle','estado','prioridad','editar','ver'];
   constructor( private ordenes_service: ServiciosService,
                private clienteservicio: ClientesService,
                private ordenserv:ServiciosService,
@@ -54,16 +54,30 @@ export class ListadoComponent {
     
 
     this.ordenes_service.getOrdenes()
-    .subscribe( (resp) => {this.dataSource = new  MatTableDataSource(resp);})
-
-    
+    .subscribe( (resp) => {
+      
+      const currentDate = new Date();
+        resp.forEach((orden) => {
+          const fechaEntrega = new Date(orden.fechaEntrega);
+          const timeDiff = Math.abs(currentDate.getTime() - fechaEntrega.getTime());
+          const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+          orden.antiguedad = daysDiff-2;
+        });
+      
+      
+      this.dataSource = new  MatTableDataSource(resp);})
 
     // this.clienteservicio.getCliente().subscribe(resp => this.cliente = resp)
     // this.ordenserv.getOrdenes().subscribe(resp2 => this.orden=resp2);
     //   console.log(this.orden);
     
 
+    
+    
   }
+  
+
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -82,3 +96,7 @@ export class ListadoComponent {
 
 
 }
+function differenceInDays(today: any, fechaEntrega: any) {
+  throw new Error('Function not implemented.');
+}
+
