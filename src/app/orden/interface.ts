@@ -9,4 +9,5 @@ export interface Orden{
     detalle:string;
     estado:string;
     prioridad:string;
+    borrado: boolean;
 }

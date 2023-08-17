@@ -32,6 +32,7 @@ export class AgregarComponent {
     detalle: '',
     estado: '',
     prioridad:'',
+    borrado:false,
   }
   cliente:Cliente[]=[];
   materiaprima: MateriaPrima[]=[];
@@ -99,11 +100,16 @@ export class AgregarComponent {
     dialog.afterClosed().subscribe(
       (result)=>{
         if (result){
-        this.ordenService.eliminarOrden(this.orden.id!)
-         .subscribe( resp =>{
+          this.orden.borrado = true;
+          console.log(this.orden.borrado)
+          this.ordenService.actualizarOrden( this.orden )
+        .subscribe( orden => console.log ( 'borrado logico', orden ))
+        this.router.navigate(['orden/listado'])
+        // this.ordenService.eliminarOrden(this.orden.id!)
+        //  .subscribe( resp =>{
 
-          this.router.navigate(['orden/listado']);
-          });
+        //   this.router.navigate(['orden/listado']);
+        //   });
         }
       }
     )
