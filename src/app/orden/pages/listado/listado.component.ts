@@ -41,7 +41,7 @@ export class ListadoComponent {
   dataSource:any;
   // displayedColumns:string[]=['id','cliente','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
     // displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaPrima','cantidad','fechaEntrega','detalle','estado','editar','ver'];
-    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fechaEntrega','antiguedad','detalle','estado','prioridad','editar','ver'];
+    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fecha_creacion','fechaEntrega','antiguedad','detalle','estado','prioridad','editar','ver'];
   constructor( private ordenes_service: ServiciosService,
                private clienteservicio: ClientesService,
                private ordenserv:ServiciosService,
@@ -58,10 +58,10 @@ export class ListadoComponent {
       
       const currentDate = new Date();
         resp.forEach((orden) => {
-          const fechaEntrega = new Date(orden.fechaEntrega);
-          const timeDiff = Math.abs(currentDate.getTime() - fechaEntrega.getTime());
+          const fecha_creacion = new Date(orden.fecha_creacion);
+          const timeDiff = Math.abs(currentDate.getTime() - fecha_creacion.getTime());
           const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-          orden.antiguedad = daysDiff-2;
+          orden.antiguedad = daysDiff;
         });
       
       

@@ -4,6 +4,7 @@ export interface Orden{
     tipoTrabajo: string;
     materiaPrima: string;
     cantidad: number;
+    fecha_creacion:string;
     fechaEntrega:string;
     antiguedad: number;
     detalle:string;

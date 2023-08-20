@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: ()=>import('./porcentajes/porcentajes.module').then(m=>m.PorcentajesModule)
   },
   {
+    path:'informes',
+    loadChildren: ()=>import('./informe-pedidos/informe-pedidos.module').then(m=>m.InformePedidosModule)
+  },
+  {
     path: 'graficos',
     loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
   },

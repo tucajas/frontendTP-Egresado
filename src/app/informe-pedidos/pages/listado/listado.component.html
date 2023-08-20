@@ -1,35 +1,42 @@
 <th>listado ordenes</th>
 
 <div>
-  <mat-form-field >
+
+  
+  <!-- <mat-form-field >
     <mat-label>Filtro de busqueda</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field> -->
+
+  <mat-form-field>
+    <mat-label>Fecha de inicio</mat-label>
+    <input matInput [matDatepicker]="startDatePicker" placeholder="Fecha de inicio" [(ngModel)]="startDate" >
+    <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #startDatePicker></mat-datepicker>
   </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Fecha de fin</mat-label>
+    <input matInput [matDatepicker]="endDatePicker" placeholder="Fecha de fin" [(ngModel)]="endDate" >
+    <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #endDatePicker></mat-datepicker>
+  </mat-form-field>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
-
+    
     <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
+      The actual rendered columns are set as a property on the row definition" -->
+      
+      <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> numero de orden </th>
       <td mat-cell *matCellDef="let orden"> {{orden.id}} </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <!-- <ng-container matColumnDef="cliente">
-      <th mat-header-cell *matHeaderCellDef> numero de cliente </th>
-      <td mat-cell *matCellDef="let orden" > {{orden.cliente}}</td>
-      
-
-      
-    </ng-container> -->
+  
     <ng-container matColumnDef="cliente_nombre">
       <th mat-header-cell *matHeaderCellDef> nombre del cliente </th>
       <td mat-cell *matCellDef="let orden" > {{orden.cliente_nombre}}</td>
-      
-
-      
     </ng-container>
 
     <ng-container matColumnDef="tipoTrabajo">
@@ -54,12 +61,12 @@
 
     <ng-container matColumnDef="fecha_creacion">
       <th mat-header-cell *matHeaderCellDef> fecha creacion </th>
-      <td mat-cell *matCellDef="let orden"> {{orden.fecha_creacion | date:'dd-MM-yyyy'}}</td>
+      <td mat-cell *matCellDef="let orden"> {{orden.fecha_creacion | date:'MM-dd-yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="fechaEntrega">
       <th mat-header-cell *matHeaderCellDef> fecha de entrega </th>
-      <td mat-cell *matCellDef="let orden"> {{orden.fechaEntrega | date:'dd-MM-yyyy' }} </td>
+      <td mat-cell *matCellDef="let orden"> {{orden.fechaEntrega | date:'MM-dd-yyyy' }} </td>
     </ng-container>
 
     <ng-container matColumnDef="antiguedad">
@@ -75,12 +82,12 @@
 
     <ng-container matColumnDef="estado">
       <th mat-header-cell *matHeaderCellDef> estado </th>
-      <td mat-cell *matCellDef="let orden" [ngClass]="getEstadoClass(orden.estado)"> {{orden.estado}} </td>
+      <td mat-cell *matCellDef="let orden" > {{orden.estado}} </td>
     </ng-container>
 
     <ng-container matColumnDef="prioridad">
       <th mat-header-cell *matHeaderCellDef> prioridad </th>
-      <td mat-cell *matCellDef="let orden" [ngClass]="getPriorityClass(orden.prioridad)" > {{orden.prioridad}} </td>
+      <td mat-cell *matCellDef="let orden" > {{orden.prioridad}} </td>
     </ng-container>
 
     <ng-container matColumnDef="editar">
@@ -92,25 +99,18 @@
       <td mat-cell *matCellDef="let orden"> <button mat-button [routerLink]="['/orden/', orden.id ]" >ver mas</button> </td>
     </ng-container>
 
-    <!-- <ng-container matColumnDef="estado">
-      <th mat-header-cell *matHeaderCellDef> Borra? </th>
-      <td mat-cell *matCellDef="let j = index;">
-        <button mat-raised-button color="warn" focusable="false" (click)="borrar(j)">
-          Borra?
-        </button>
-      </td>
-    </ng-container> -->
+  
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
-    <tr class="mat-row" *matNoDataRow>
+    <!-- <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell" colspan="4">No se encuentra un cliente con ese nombre "{{input.value}}"</td>
-    </tr>
+    </tr> -->
   </table>
 
 </div>
 <div>
   
-
+  <button mat-button (click)="applyDateFilter()">Aplicar filtro</button>
 </div>

@@ -27,6 +27,7 @@ export class AgregarComponent {
     tipoTrabajo: '',
     materiaPrima: '',
     cantidad: 0,
+    fecha_creacion:'',
     fechaEntrega: '',
     antiguedad:0,
     detalle: '',
