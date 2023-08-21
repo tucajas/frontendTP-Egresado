@@ -44,6 +44,10 @@ const routes: Routes = [
     loadChildren: ()=>import('./informe-pedidos/informe-pedidos.module').then(m=>m.InformePedidosModule)
   },
   {
+    path:'gastos',
+    loadChildren: ()=>import('./gastos/gastos.module').then(m=>m.GastosModule)
+  },
+  {
     path: 'graficos',
     loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
   },
