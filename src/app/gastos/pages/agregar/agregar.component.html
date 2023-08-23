@@ -1,1 +1,77 @@
 <p>agregar works!</p>
+<div>
+    <p></p>
+</div>
+
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>fecha</mat-label>
+        <input matInput type="date" [(ngModel)]="gasto.fecha">
+    </mat-form-field>
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field >
+        <mat-label>materia prima</mat-label>
+        <!-- <input matInput type="text" [(ngModel)]="orden.cliente" required> -->
+        <mat-select  [(ngModel)]="gasto.materiaprima">
+            <mat-option  *ngFor="let m of mate" [value]="m.id">{{m.descripcion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field >
+        <mat-label>proveedor</mat-label>
+        <!-- <input matInput type="text" [(ngModel)]="orden.cliente" required> -->
+        <mat-select  [(ngModel)]="gasto.proveedor">
+            <mat-option  *ngFor="let p of prov" [value]="p.id">{{p.nombre }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+   
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>cantidad de compra</mat-label>
+        <input matInput type="number" [(ngModel)]="gasto.cantidadCompra">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>valor de la compra</mat-label>
+        <input matInput type="number" [(ngModel)]="gasto.valorCompra">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>valor abonado por cuenta corriente</mat-label>
+        <input matInput type="number" [(ngModel)]="gasto.valorAbonadoCC" (ngModelChange)="calcularSaldo()">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>valor abonado efectivo</mat-label>
+        <input matInput type="number" [(ngModel)]="gasto.valorAbonadoFt" (ngModelChange)="calcularSaldo()">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+    <mat-form-field>
+        <mat-label>saldo</mat-label>
+        <input matInput type="number" [(ngModel)]="gasto.saldo">
+    </mat-form-field>
+    <br>
+    
+</div>
+<div fxLayoutAlign="center">
+
+    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+    <button *ngIf="gasto.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
+</div>
+    

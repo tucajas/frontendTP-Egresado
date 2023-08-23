@@ -1,1 +1,41 @@
 <p>gasto works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+
+
+    
+    <mat-grid-list cols="1" *ngIf="!gasto; else divGasto">
+        <mat-grid-tile>
+            <mat-spinner></mat-spinner>
+        </mat-grid-tile>
+    
+    </mat-grid-list>
+    
+    <ng-template #divGasto>
+       <mat-card class="card">
+            <mat-card-title>GASTO</mat-card-title>
+           <mat-list>
+                <span>ID</span>
+                <mat-list-item>{{ gasto.id }}</mat-list-item>
+                <span>FECHA</span>
+                <mat-list-item>{{ gasto.fecha }}</mat-list-item>
+                <span>MATERIA PRIMA</span>
+                <mat-list-item>{{ gasto.materiaprima }}</mat-list-item>
+                <span>PROVEEDOR</span>
+                <mat-list-item>{{ gasto.proveedor }}</mat-list-item>
+                <span>CANTIDAD COMPRADA</span>
+                <mat-list-item>{{ gasto.cantidadCompra }}</mat-list-item>
+                <span>VALOR DE LA COMPRA</span>
+                <mat-list-item>{{ gasto.valorCompra }}</mat-list-item>
+                <span>VALOR ABONADO CC</span>
+                <mat-list-item>{{ gasto.valorAbonadoCC }}</mat-list-item>
+                <span>VALOR ABONADO EFECTIVO</span>
+                <mat-list-item>{{ gasto.valorAbonadoFt }}</mat-list-item>
+                
+                <button mat-button (click)="regresar()" >regresar</button>
+           </mat-list>
+
+       </mat-card>
+    </ng-template>
+</div>
+
+
