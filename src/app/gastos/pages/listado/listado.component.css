@@ -2,3 +2,6 @@
     background-color: red;
     color: white; /* Cambia el color del texto para que sea legible en el fondo rojo */
   }
+  .saldo{
+    background-color: cornflowerblue;
+  }

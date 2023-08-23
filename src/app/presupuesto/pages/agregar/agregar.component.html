@@ -8,7 +8,7 @@
         
     </div>
     <div fxLayout="row" fxLayoutAlign="space-between none">
-        <mat-form-field> 
+        <!-- <mat-form-field> 
              <button class="btn btn-primary" (click)="calculofinal()">CALCULO FINAL</button>
              <input matInput type="number" readonly="TRUE" [(ngModel)]="totalfinal"> 
         </mat-form-field> 
@@ -18,7 +18,7 @@
                 <mat-option>1</mat-option>
                 <mat-option>2</mat-option>
            </mat-select> 
-       </mat-form-field> 
+       </mat-form-field>  -->
         <H2>VALIDEZ POR 24HS</H2>
 
         
@@ -61,14 +61,14 @@
                 <label >personalizar descuento</label>
                 <input matInput type="number" [(ngModel)]="descuentoEfectivo">
             </mat-form-field> -->
-            <mat-form-field appearance="outline">
+            <!-- <mat-form-field appearance="outline">
                 <label  >% recargo por tarjeta</label>
                 <mat-select [(ngModel)]="porcenDesc2" >
                     <mat-option value="0">ninguno</mat-option>
                     <mat-option  value="10">10</mat-option>
                     <mat-option  value="20">20</mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
                 
         </div>
     </div>
@@ -83,8 +83,8 @@
 
     <div  fxLayout="row" fxLayoutAlign="center center" >
         <button class="btn btn-primary" (click)="sumar()">PRECIO LISTA</button>
-        <button class="btn btn-primary" (click)="efectivo()">EFECTIVO</button>
-        <button class="btn btn-primary" (click)="tarjeta()">TARJETA</button>
+        <button class="btn btn-primary" (click)="efectivo()">APLICAR DESCUENTO O RECARGO</button>
+        <!-- <button class="btn btn-primary" (click)="tarjeta()">TARJETA</button> -->
     </div>
     <div>
         <p></p>

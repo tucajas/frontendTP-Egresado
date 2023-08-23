@@ -16,7 +16,7 @@ import { JsonPipe } from '@angular/common';
 })
 export class ListadoComponent {
  
-  
+ 
 
   getPriorityClass(priority: string) {
     if (priority === '1') {
@@ -81,6 +81,7 @@ export class ListadoComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    
     
   }
  
