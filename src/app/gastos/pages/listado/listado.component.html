@@ -49,7 +49,7 @@
       </ng-container>
       <ng-container matColumnDef="saldo">
         <th mat-header-cell *matHeaderCellDef> valor saldo </th>
-        <td mat-cell *matCellDef="let gastos" [ngClass]="{'saldo-deudor': gastos.saldo < 0}">{{ gastos.saldo < 0 ? 'Saldo Deudor' : gastos.saldo }}</td>
+        <td mat-cell *matCellDef="let gastos" [ngClass]="{'saldo-deudor': gastos.saldo < 0}">{{ gastos.saldo < 0 ? 'Saldo Deudor' : gastos.saldo }}/{{gastos.saldo}}</td>
       </ng-container>
     <ng-container matColumnDef="editar">
       <th mat-header-cell *matHeaderCellDef> editar </th>
