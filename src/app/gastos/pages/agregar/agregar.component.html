@@ -14,7 +14,7 @@
         <mat-label>materia prima</mat-label>
         <!-- <input matInput type="text" [(ngModel)]="orden.cliente" required> -->
         <mat-select  [(ngModel)]="gasto.materiaprima">
-            <mat-option  *ngFor="let m of mate" [value]="m.id">{{m.descripcion}}</mat-option>
+            <mat-option  *ngFor="let m of mate" [value]="m.id">{{m.materia_prima}}</mat-option>
         </mat-select>
     </mat-form-field>
     

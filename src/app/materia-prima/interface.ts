@@ -2,7 +2,8 @@ import { Proveedor } from "../proveedores/interface";
 
 export interface MateriaPrima {
     id? : number;
-    descripcion:string;
+    proveedor:string;
     precio: number;
-    nombre: [];
+    materia_prima: string;
+    descripcion?:string;
 }

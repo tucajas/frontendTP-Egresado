@@ -34,9 +34,10 @@ export class AgregarComponent {
     estado: '',
     prioridad:'',
     borrado:false,
+    // materia_prima_descripcion:'',
   }
   cliente:Cliente[]=[];
-  materiaprima: MateriaPrima[]=[];
+  proveedorMateriaPrima: MateriaPrima[]=[];
   tipoTrabajo: TipoTrabajo[]=[];
   
   
@@ -56,7 +57,7 @@ export class AgregarComponent {
     this.activateroute.params.pipe(switchMap(({id})=>this.ordenService.getOrdenesPorId(id))
       ).subscribe(orden =>this.orden=orden);
     this.clienteService.getCliente().subscribe (cliente=>this.cliente=cliente);
-    this.materiaPrima.getMateriaPrima().subscribe(materiaprima=>this.materiaprima=materiaprima);
+    this.materiaPrima.getMateriaPrima().subscribe(materiaprima=>this.proveedorMateriaPrima=materiaprima);
     this.tipoTrabajoservice.getTipoTrabajo().subscribe(tipoTrabajo=>this.tipoTrabajo=tipoTrabajo);
     
   }

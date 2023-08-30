@@ -11,4 +11,5 @@ export interface Orden{
     estado:string;
     prioridad:string;
     borrado: boolean;
+    // materiaprima_descripcion?:string;
 }

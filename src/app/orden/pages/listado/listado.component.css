@@ -7,3 +7,12 @@
 .priority-low{
     background-color: green;
 }
+.finalizar-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+.finalizar-button[disabled] {
+    background-color: #DDDDDD; /* Color de fondo para botones deshabilitados */
+    color: #666666; /* Color de texto para botones deshabilitados */
+  }

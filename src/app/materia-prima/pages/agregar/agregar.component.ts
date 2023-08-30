@@ -18,9 +18,9 @@ import { PopdialogComponent } from '../../popdialog/popdialog.component';
 export class AgregarComponent {
 
   materiaPrima: MateriaPrima={
-    descripcion:'',
+    proveedor:'',
     precio:0,
-    nombre: [],
+    materia_prima: '',
   }
   proveedor2: Proveedor[] =[];
   materiaprima2:MateriaPrima[]=[];
@@ -54,7 +54,7 @@ export class AgregarComponent {
       }
       else{
         // crear
-       
+          console.log('entroa crear')
           this.materiaPrimaService.agregarMateriaPrima(this.materiaPrima)
             .subscribe(resp=>{
               console.log('respuesta agregando',resp);
