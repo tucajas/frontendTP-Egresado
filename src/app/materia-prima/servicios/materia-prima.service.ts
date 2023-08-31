@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MateriaPrima } from '../interface';
+import { proveedorMateriaPrima } from 'src/app/orden/interfaceProveedorMateriaPrima';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,9 @@ export class MateriaPrimaService {
 
   getMateriaPrima():Observable<MateriaPrima[]>{
     return this.http.get<MateriaPrima[]>('http://127.0.0.1:8000/materiaPrima/proveedormateriaprima/');
+  }
+  getMateriaPrima3():Observable<proveedorMateriaPrima[]>{
+    return this.http.get<proveedorMateriaPrima[]>('http://127.0.0.1:8000/materiaPrima/proveedormateriaprima/');
   }
   getMateriaPrima2():Observable<MateriaPrima[]>{
     return this.http.get<MateriaPrima[]>('http://127.0.0.1:8000/materiaPrima/materias-primas/');

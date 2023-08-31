@@ -12,6 +12,7 @@ import { TipoTrabajo } from 'src/app/tipotrabajo/interface';
 import { TipotrabajoService } from 'src/app/tipotrabajo/tipotrabajo.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopdialogComponent } from '../../popdialog/popdialog.component';
+import { proveedorMateriaPrima } from '../../interfaceProveedorMateriaPrima';
 
 @Component({
   selector: 'app-agregar',
@@ -34,14 +35,14 @@ export class AgregarComponent {
     estado: '',
     prioridad:'',
     borrado:false,
-    // materia_prima_descripcion:'',
+    
   }
   cliente:Cliente[]=[];
-  proveedorMateriaPrima: MateriaPrima[]=[];
+
+  proveedorMateriaPrima: proveedorMateriaPrima[]=[];
+  
   tipoTrabajo: TipoTrabajo[]=[];
-  
-  
-  
+
   
   
   
@@ -57,8 +58,9 @@ export class AgregarComponent {
     this.activateroute.params.pipe(switchMap(({id})=>this.ordenService.getOrdenesPorId(id))
       ).subscribe(orden =>this.orden=orden);
     this.clienteService.getCliente().subscribe (cliente=>this.cliente=cliente);
-    this.materiaPrima.getMateriaPrima().subscribe(materiaprima=>this.proveedorMateriaPrima=materiaprima);
+    this.materiaPrima.getMateriaPrima3().subscribe(materiaprima=>this.proveedorMateriaPrima=materiaprima);
     this.tipoTrabajoservice.getTipoTrabajo().subscribe(tipoTrabajo=>this.tipoTrabajo=tipoTrabajo);
+   
     
   }
   guardar(){

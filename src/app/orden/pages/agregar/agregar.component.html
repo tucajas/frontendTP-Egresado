@@ -41,11 +41,11 @@
             <mat-form-field fxFlex="100" fxLayout.xs="column">
                 <mat-label>materia prima x</mat-label>
                 <mat-select  [(ngModel)]="orden.materiaPrima">
-                    <mat-option  *ngFor="let m of proveedorMateriaPrima" [value]="m.id">{{m.materia_prima}}</mat-option>
+                    <mat-option *ngFor="let m of proveedorMateriaPrima" [value]="m.id">{{m.materia_prima_descripcion}}-{{m.proveedor_nombre}}</mat-option>
                 </mat-select>
                 
             </mat-form-field>
-            {{orden.materiaPrima}}
+           
         
         
         </div>

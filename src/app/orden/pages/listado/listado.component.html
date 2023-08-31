@@ -46,7 +46,7 @@
 
     <ng-container matColumnDef="materiaprima_descripcion">
       <th mat-header-cell *matHeaderCellDef> materia prima </th>
-      <td mat-cell *matCellDef="let orden"> {{orden.materiaprima_descripcion}} </td>
+      <td mat-cell *matCellDef="let orden"> {{orden.materiaprima_descripcion}}{{orden.proveedor_nombre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="cantidad">
