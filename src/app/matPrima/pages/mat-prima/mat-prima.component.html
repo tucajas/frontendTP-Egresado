@@ -1,0 +1,26 @@
+<p>mat-prima works!</p>
+<div fxLayout="row" fxLayoutAlign="center">
+
+    
+    <mat-grid-list cols="1" *ngIf="!matPrima; else divMateriaPrima">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<ng-template #divMateriaPrima>
+   <mat-card class="card">
+        <mat-card-title>MATERIA PRIMA</mat-card-title>
+        <mat-list>
+            <span>ID</span>
+        <mat-list-item>{{ matPrima.id }}</mat-list-item>
+        <span>DESCRIPCION</span>
+        <mat-list-item>{{ matPrima.descripcion }}</mat-list-item>
+        
+    </mat-list>
+    <button mat-button (click)="regresar()" >regresar</button>
+</mat-card>
+</ng-template>
+
+</div>

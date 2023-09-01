@@ -67,7 +67,7 @@ export class ListadoComponent {
           const fecha_creacion = new Date(orden.fecha_creacion);
           const timeDiff = Math.abs(currentDate.getTime() - fecha_creacion.getTime());
           const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-          orden.antiguedad = daysDiff;
+          orden.antiguedad = daysDiff-1;
         });
       
       

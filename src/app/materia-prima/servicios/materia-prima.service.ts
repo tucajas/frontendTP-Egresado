@@ -31,7 +31,7 @@ export class MateriaPrimaService {
     return this.http.put<MateriaPrima>(`http://127.0.0.1:8000/materiaPrima/${materiaPrima.id}`, materiaPrima );
   }
   eliminarMateriaPrima(id: number):Observable<any>{
-    return this.http.delete<any>(`http://127.0.0.1:8000/materiaPrima/${id}` );
+    return this.http.delete<any>(`http://127.0.0.1:8000/materiaPrima/proveedormateriaprima/${id}` );
   }
   
 

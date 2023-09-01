@@ -48,6 +48,10 @@ const routes: Routes = [
     loadChildren: ()=>import('./gastos/gastos.module').then(m=>m.GastosModule)
   },
   {
+    path:'matPrima',
+    loadChildren: ()=>import('./matPrima/mat-prima.module').then(m=>m.MatPrimaModule)
+  },
+  {
     path: 'graficos',
     loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
   },
