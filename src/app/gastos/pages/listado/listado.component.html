@@ -37,7 +37,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="fecha">
       <th mat-header-cell *matHeaderCellDef> fecha </th>
-      <td mat-cell *matCellDef="let gastos"> {{gastos.fecha}} </td>
+      <td mat-cell *matCellDef="let gastos"> {{gastos.fecha | date:'MM-dd-yyyy'}} </td>
     </ng-container>
     <ng-container matColumnDef="mate">
       <th mat-header-cell *matHeaderCellDef>  materia </th>

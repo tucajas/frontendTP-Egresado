@@ -36,18 +36,40 @@ export class ListadoComponent {
     this.filteredData = this.dataSource.filteredData;
     
   }
+  //nuevo codigo desde aca
   applyDateFilter() {
     if (this.startDate && this.endDate) {
       this.dataSource.filterPredicate = (data: Gastos) => {
-        const dateString = new Date(String(data.fecha)).toLocaleDateString();
-        const startDateString = this.startDate.toLocaleDateString();
-        const endDateString = this.endDate.toLocaleDateString();
-        return dateString >= startDateString && dateString <= endDateString;
-        };
-        this.dataSource.filter = 'trigger'; // Esto dispara el filtro
+        const expenseDate = new Date(String(data.fecha));
+        const startDate = this.startDate;
+        const endDate = this.endDate;
+  
+        // Comparar por año, mes y día
+        return (
+          expenseDate >= startDate &&
+          expenseDate <= endDate
+        );
+      };
+      this.dataSource.filter = 'trigger'; // Esto dispara el filtro
     }
-     // Vacía el filtro de texto si existiera
+    // Vacía el filtro de texto si existiera
   }
+  
+  //hasta aca
+
+
+  // applyDateFilter() {
+  //   if (this.startDate && this.endDate) {
+  //     this.dataSource.filterPredicate = (data: Gastos) => {
+  //       const dateString = new Date(String(data.fecha)).toLocaleDateString();
+  //       const startDateString = this.startDate.toLocaleDateString();
+  //       const endDateString = this.endDate.toLocaleDateString();
+  //       return dateString >= startDateString && dateString <= endDateString;
+  //       };
+  //       this.dataSource.filter = 'trigger'; // Esto dispara el filtro
+  //   }
+  //    // Vacía el filtro de texto si existiera
+  // }
 
 
 
