@@ -52,6 +52,10 @@ const routes: Routes = [
     loadChildren: ()=>import('./matPrima/mat-prima.module').then(m=>m.MatPrimaModule)
   },
   {
+    path:'correo',
+    loadChildren: ()=>import('./correo/correo.module').then(m=>m.CorreoModule)
+  },
+  {
     path: 'graficos',
     loadChildren: ()=>import('./graficos/graficos.module').then(m=>m.GraficosModule)
   },
