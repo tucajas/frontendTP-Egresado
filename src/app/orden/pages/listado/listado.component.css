@@ -16,3 +16,7 @@
     background-color: #DDDDDD; /* Color de fondo para botones deshabilitados */
     color: #666666; /* Color de texto para botones deshabilitados */
   }
+.notificar-button {
+    background-color: #4e4eb1; /* Color de fondo para botones deshabilitados */
+    color: #2118a6; /* Color de texto para botones deshabilitados */
+}

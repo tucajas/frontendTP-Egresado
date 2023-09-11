@@ -9,6 +9,7 @@ import { PopdialogComponent } from '../../popdialog/popdialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormularioComponent } from 'src/app/correo/pages/formulario/formulario.component';
 
 
 
@@ -23,9 +24,9 @@ export class ListadoComponent {
  
 
   getPriorityClass(priority: string) {
-    if (priority === '1') {
+    if (priority === 'alta') {
       return 'priority-high';
-    } else if (priority === '2') {
+    } else if (priority === 'media') {
       return 'priority-medium';
     } else {
       return 'priority-low';
@@ -43,12 +44,12 @@ export class ListadoComponent {
              
 
   dataSource:any;
-    displayedColumns:string[]=['id','cliente_nombre','tipoTrabajo','materiaprima_descripcion','cantidad','fecha_creacion',
+    displayedColumns:string[]=['id','cliente_nombre','cliente_direccion','tipoTrabajo','materiaprima_descripcion','cantidad','fecha_creacion',
     'fechaEntrega','antiguedad','detalle','estado','prioridad','editar','cambiarEstado'];
   constructor( private ordenes_service: ServiciosService,
               //  private clienteservicio: ClientesService,
               //  private ordenserv:ServiciosService,
-              //  private matdialog:MatDialog,
+               private dialog:MatDialog,
                 ) { }
   
 
@@ -102,6 +103,16 @@ export class ListadoComponent {
           this.dataSource = [...this.dataSource];
     }
       
+  }
+  abrirFormularioCorreo() {
+    const dialogRef = this.dialog.open(FormularioComponent, {
+      width: '500px', // Personaliza el tamaño de la ventana modal según tus necesidades
+    });
+
+    
+    dialogRef.afterClosed().subscribe((result) => {
+      // Puedes realizar acciones después de que se cierre el formulario, si es necesario
+    });
   }
   
   

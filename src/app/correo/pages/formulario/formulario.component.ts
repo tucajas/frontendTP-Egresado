@@ -14,7 +14,7 @@ export class FormularioComponent {
   constructor(private http: HttpClient) {}
 
   enviarFormulario() {
-    if (this.estado === 'finalizado') {
+    if (this.estado === 'finalizado'|| this.estado === 'en proceso') {
       const data = {
         estado: this.estado,
         destinatario: this.destinatario,
