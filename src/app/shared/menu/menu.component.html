@@ -6,7 +6,142 @@
     <a mat-list-item (click)="closeMenu()" routerLink="/presupuesto/agregar"> 
        <span class="navegacion">Crear presupuesto</span>
     </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/listado"> 
+
+     <!-- Menú Clientes -->
+  <mat-list-item (click)="toggleClientesMenu()">
+    <mat-icon class="icono-con-margen">group</mat-icon>
+    <span class="navegacion">Clientes</span>
+    <mat-icon class="submenu-icon">{{ clientesMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="clientesMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/clientes/agregar">
+      <span class="navegacion">Agregar Cliente</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/clientes/listado">
+      <span class="navegacion">Buscar / Listar Clientes</span>
+    </a>
+  </div>
+
+  <!-- Menú Proveedores -->
+  <mat-list-item (click)="toggleProveedoresMenu()">
+    <mat-icon class="icono-con-margen">store</mat-icon>
+    <span class="navegacion">Proveedores</span>
+    <mat-icon class="submenu-icon">{{ proveedoresMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="proveedoresMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/agregar">
+      <span class="navegacion">Agregar Proveedor</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/listado">
+      <span class="navegacion">Buscar / Listar Proveedores</span>
+    </a>
+  </div>
+  <!-- Menú Porcentajes -->
+  <mat-list-item (click)="togglePorcentajesMenu()">
+    <mat-icon class="icono-con-margen">percentage</mat-icon>
+    <span class="navegacion">Porcentajes</span>
+    <mat-icon class="submenu-icon">{{ porcentajesMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="porcentajesMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/listado">
+      <span class="navegacion">Listado Porcentaje</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/agregar">
+      <span class="navegacion">Agregar Porcentaje</span>
+    </a>
+  </div>
+  <!-- Menú Orden de Trabajo -->
+  <mat-list-item (click)="toggleOrdenTrabajoMenu()">
+    <mat-icon class="icono-con-margen">work</mat-icon>
+    <span class="navegacion">Orden de Trabajo</span>
+    <mat-icon class="submenu-icon">{{ ordenTrabajoMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="ordenTrabajoMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/orden/agregar">
+      <span class="navegacion">Agregar Orden de Trabajo</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/orden/listado">
+      <span class="navegacion">Buscar / Listar Orden de Trabajo</span>
+    </a>
+  </div>
+  <!-- Menú Artículos -->
+  <mat-list-item (click)="toggleArticulosMenu()">
+    <mat-icon class="icono-con-margen">description</mat-icon>
+    <span class="navegacion">Artículos</span>
+    <mat-icon class="submenu-icon">{{ articulosMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="articulosMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/articulo/listado">
+      <span class="navegacion">Buscar / Listar Artículos</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/articulo/agregar">
+      <span class="navegacion">Agregar Artículo</span>
+    </a>
+  </div>
+  <!-- Menú Tipo de Trabajo -->
+  <mat-list-item (click)="toggleTipoTrabajoMenu()">
+    <mat-icon class="icono-con-margen">work</mat-icon>
+    <span class="navegacion">Tipo de Trabajo</span>
+    <mat-icon class="submenu-icon">{{ tipoTrabajoMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="tipoTrabajoMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/listado">
+      <span class="navegacion">Buscar / Listar Tipo de Trabajo</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/agregar">
+      <span class="navegacion">Agregar Tipo de Trabajo</span>
+    </a>
+  </div>
+  <!-- Menú Materia Prima -->
+  <mat-list-item (click)="toggleMateriaPrimaMenu()">
+    <mat-icon class="icono-con-margen">inventory</mat-icon>
+    <span class="navegacion">Materia/proveedor</span>
+    <mat-icon class="submenu-icon">{{ materiaPrimaMenuOpen ? 'keyboard_arrow_right' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="materiaPrimaMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/listado">
+      <span class="navegacion">Listar Materia Prima</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar">
+      <span class="navegacion">Agregar Materia Prima</span>
+    </a>
+  </div>
+  <!-- Menú MatPrima -->
+<mat-list-item (click)="toggleMatPrimaMenu()">
+    <mat-icon class="icono-con-margen">inventory</mat-icon>
+    <span class="navegacion">Materia Prima</span>
+    <mat-icon class="submenu-icon">{{ matPrimaMenuOpen ? 'chevron_right' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="matPrimaMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/matPrima/agregar">
+      <span class="navegacion">Agregar descripcion</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/matPrima/listado">
+      <span class="navegacion">Listar de Materia Prima</span>
+    </a>
+  </div>
+  <!-- Menú Gastos -->
+<mat-list-item (click)="toggleGastosMenu()">
+    <mat-icon class="icono-con-margen">money</mat-icon>
+    <span class="navegacion">Gastos</span>
+    <mat-icon class="submenu-icon">{{ gastosMenuOpen ? 'expand_less' : 'expand_more' }}</mat-icon>
+  </mat-list-item>
+  <div *ngIf="gastosMenuOpen">
+    <a mat-list-item (click)="closeMenu()" routerLink="/gastos/agregar">
+      <span class="navegacion">Agregar Gasto</span>
+    </a>
+    <a mat-list-item (click)="closeMenu()" routerLink="/gastos/listado">
+      <span class="navegacion">Buscar / Listar Gastos</span>
+    </a>
+  </div>
+
+
+
+
+
+
+
+    <!-- <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/listado"> 
         <span class="navegacion">listado porcentaje</span>
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/porcentajes/agregar"> 
@@ -29,8 +164,8 @@
     <a mat-list-item (click)="closeMenu()" routerLink="/clientes/listado"> 
         
         <span class="navegacion">Buscar / listar clientes</span>
-    </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/articulo/agregar"> 
+    </a> -->
+    <!-- <a mat-list-item (click)="closeMenu()" routerLink="/articulo/agregar"> 
         
         <span class="navegacion">Agregar articulo</span>
     </a>
@@ -46,9 +181,9 @@
     <a mat-list-item (click)="closeMenu()" routerLink="/tipoTrabajo/listado"> 
         
         <span class="navegacion">Buscar / listar tipo de trabajo</span>
-    </a>
+    </a> -->
     
-     <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar"> 
+     <!-- <a mat-list-item (click)="closeMenu()" routerLink="/materiaPrima/agregar"> 
          
          <span class="navegacion">Agregar materia prima</span>
      </a>
@@ -64,26 +199,26 @@
     <a mat-list-item (click)="closeMenu()" routerLink="/proveedores/listado"> 
         
         <span class="navegacion">Buscar / listar proveedores</span>
-    </a>
+    </a> -->
     <a mat-list-item (click)="closeMenu()" routerLink="/informes/listado"> 
-        
+        <mat-icon class="icono-con-margen">description</mat-icon>
         <span class="navegacion">informes </span>
     </a>
-    <a mat-list-item (click)="closeMenu()" routerLink="/matPrima/agregar"> 
+    <!-- <a mat-list-item (click)="closeMenu()" routerLink="/matPrima/agregar"> 
         
         <span class="navegacion">agregar descripcion materia prima </span>
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/matPrima/listado"> 
         
         <span class="navegacion">listado descripcion materia prima </span>
-    </a>
+    </a> -->
 
-    <a mat-list-item (click)="closeMenu()" routerLink="/gastos/listado"> 
+    <!-- <a mat-list-item (click)="closeMenu()" routerLink="/gastos/listado"> 
         
         <span class="navegacion">Gastos listado </span>
     </a>
     <a mat-list-item (click)="closeMenu()" routerLink="/gastos/agregar"> 
         
         <span class="navegacion">Gastos agregar </span>
-    </a>
+    </a> -->
 </mat-nav-list>
