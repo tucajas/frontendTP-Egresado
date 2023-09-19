@@ -1,11 +1,18 @@
 .encabezado{
-  font-style: oblique;
+  font-style:italic;
   font-family: 'Courier New', Courier, monospace;
-  font-size: x-large;
+  font-size: medium;
   display: table;
-  margin: auto;
+  margin: initial;
   font-weight: 1;
 }
 mat-toolbar{
-  background-color: #6D7993;
+  background-image: url("fondoimprenta.jpg");
+}
+#fondo {
+  background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+  background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+  /* Otros estilos que desees aplicar al componente */
+  background-position: center;
+  padding-top: 0px;
 }

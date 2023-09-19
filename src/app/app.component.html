@@ -1,3 +1,4 @@
+
 <mat-sidenav-container>
     <mat-sidenav #menu>
         <app-menu (menuToggle)="menu.toggle()" ></app-menu>
@@ -6,12 +7,17 @@
         <app-encabezado (menuToggle)="menu.toggle()"></app-encabezado>
         <main class="margensup">
             
-            
-            
-                <router-outlet></router-outlet>
-          
+            <router-outlet>
+                <div id="fondo" [ngClass]="{'hide-image': hideImage}">
+                    
+                </div>
+
+
+            </router-outlet>
+            <app-pie></app-pie>
             
         </main>
         
     </mat-sidenav-content>
 </mat-sidenav-container>
+

@@ -1,3 +1,18 @@
+#fondo {
+    background-image: url("listado.jpg");
+    background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    /* Otros estilos que desees aplicar al componente */
+    background-position: center;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 10px;
+
+
+  }
+
+
+  
 .priority-high{
     background-color: red;
 }
@@ -20,3 +35,4 @@
     background-color: #4e4eb1; /* Color de fondo para botones deshabilitados */
     color: #2118a6; /* Color de texto para botones deshabilitados */
 }
+ 

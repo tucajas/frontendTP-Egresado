@@ -44,7 +44,7 @@ export class ListadoComponent {
              
 
   dataSource:any;
-    displayedColumns:string[]=['id','cliente_nombre','cliente_direccion','tipoTrabajo','materiaprima_descripcion','cantidad','fecha_creacion',
+    displayedColumns:string[]=['id','cliente_nombre','cliente_direccion','tipoTrabajo','materiaprima_descripcion','cantidad',
     'fechaEntrega','antiguedad','detalle','estado','prioridad','editar','cambiarEstado'];
   constructor( private ordenes_service: ServiciosService,
               //  private clienteservicio: ClientesService,

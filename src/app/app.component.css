@@ -8,7 +8,7 @@ mat-sidenav{
 mat-sidenav-content{
     background-color: white;
 }
-.card{
+/* .card{
     text-align: center;
     margin-top: 10px;
     margin-left: auto;
@@ -16,7 +16,23 @@ mat-sidenav-content{
     width: 400px;
     align-items: center;
     align-self: center;
-}
+} */
 main{
-    margin-top: 20px;
+    margin-top: 10px;
+    width: 100%;
+    
 }
+#fondo {
+    background-image: url("fondo principal.jpg");
+    background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    /* Otros estilos que desees aplicar al componente */
+    background-position: center;
+    padding-top: 20px;
+    height: 450px;
+    width: 100%;
+  }
+  .hide-image {
+    display: none;
+  }
+  

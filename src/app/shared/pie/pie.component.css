@@ -1,3 +1,14 @@
-mat-toolbar{
-    background-color: #6D7993;
+
+  mat-toolbar{
+    background-image: url("fondoimprenta.jpg");
+    font-style: italic;
+    size: 14px;
+    background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+  }
+  #fondo {
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    /* Otros estilos que desees aplicar al componente */
+    background-position: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
