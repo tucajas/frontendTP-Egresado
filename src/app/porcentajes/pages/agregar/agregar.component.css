@@ -1,0 +1,11 @@
+#fondo {
+    background-image: url("fondoimprenta.jpg");
+    background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    /* Otros estilos que desees aplicar al componente */
+    background-position: center;
+    padding-top: 150px;
+    padding-bottom: 140px;
+    
+    
+  }

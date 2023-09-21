@@ -2,13 +2,22 @@
   mat-toolbar{
     background-image: url("fondoimprenta.jpg");
     font-style: italic;
-    size: 14px;
+    font-size: 12px;
     background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+    height: 50px;
+    
   }
   #fondo {
     background-repeat: no-repeat; /* Evitar la repetición de la imagen */
     /* Otros estilos que desees aplicar al componente */
     background-position: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
   }
+  .footer {
+    position: fixed; /* O absolute si es más adecuado para tu diseño */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  

@@ -1,18 +1,20 @@
+<div id="fondo">
 
-<div fxLayoutAlign="center">
-    <mat-form-field>
+    <div fxLayoutAlign="center">
+        <mat-form-field>
         <mat-label>titulo</mat-label>
         <input matInput type="text" [(ngModel)]="descuento.titulo" >
     </mat-form-field>
-</div>
-<div fxLayoutAlign="center">
-    <mat-form-field>
-        <mat-label>monto</mat-label>
-        <input matInput type="number" [(ngModel)]="descuento.desc">
-    </mat-form-field>
-</div>
-<div fxLayoutAlign="center">
+    </div>
+    <div fxLayoutAlign="center">
+        <mat-form-field>
+            <mat-label>monto</mat-label>
+            <input matInput type="number" [(ngModel)]="descuento.desc">
+        </mat-form-field>
+    </div>
+    <div fxLayoutAlign="center">
 
-    <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
-    <button *ngIf="descuento.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
+        <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+        <button *ngIf="descuento.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
+    </div>
 </div>

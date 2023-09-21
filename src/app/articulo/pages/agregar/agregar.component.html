@@ -1,8 +1,7 @@
-<div>
-    <p></p>
-</div>
-
-<div fxLayoutAlign="center">
+<div id="fondo">
+    
+    
+    <div fxLayoutAlign="center" >
     <mat-form-field>
         <mat-label>descripcion</mat-label>
         <input matInput type="text" [(ngModel)]="articulo.descripcion">
@@ -34,3 +33,4 @@
     <button *ngIf="articulo.id" mat-raised-button color="warn" (click)="borrar()">borrar</button>
 </div>
     
+</div>

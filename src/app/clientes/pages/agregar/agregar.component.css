@@ -8,6 +8,7 @@
     background-repeat: no-repeat; /* Evitar la repetición de la imagen */
     /* Otros estilos que desees aplicar al componente */
     background-position: center;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-bottom: 0px;
     
   }

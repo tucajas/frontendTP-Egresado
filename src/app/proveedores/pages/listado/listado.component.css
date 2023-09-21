@@ -1,0 +1,14 @@
+#fondo {
+    background-image: url("listado.jpg");
+    background-size:cover; /* Ajustar la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    /* Otros estilos que desees aplicar al componente */
+    background-position: center;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+
+  }
