@@ -12,7 +12,7 @@ export class ClientesService {
   constructor(private http:HttpClient) { }
 
   getCliente():Observable<Cliente[]>{
-    return this.http.get<Cliente[]>('http://127.0.0.1:8000/clientes/list/');
+    return this.http.get<Cliente[]>('https://tucajas.pythonanywhere.com/clientes/list/');
   }
   getClientePorId(id:string):Observable<Cliente>{
     return this.http.get<Cliente>( ` http://127.0.0.1:8000/clientes/${ id }`);
@@ -28,6 +28,6 @@ export class ClientesService {
   eliminarCliente(id: number):Observable<any>{
     return this.http.delete<any>(`http://127.0.0.1:8000/clientes/${id}` );
   }
-  
+
 
 }
