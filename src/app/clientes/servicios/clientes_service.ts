@@ -19,7 +19,7 @@ export class ClientesService {
   }
 
   agregarCliente(cliente: Cliente):Observable<Cliente>{
-    return this.http.post<Cliente>('http://127.0.0.1:8000/clientes/list/',cliente );
+    return this.http.post<Cliente>('https://tucajas.pythonanywhere.com/clientes/list/',cliente );
   }
 
   actualizarCliente(cliente: Cliente):Observable<Cliente>{
