@@ -15,7 +15,7 @@ export class ClientesService {
     return this.http.get<Cliente[]>('https://tucajas.pythonanywhere.com/clientes/list/');
   }
   getClientePorId(id:string):Observable<Cliente>{
-    return this.http.get<Cliente>( ` http://127.0.0.1:8000/clientes/${ id }`);
+    return this.http.get<Cliente>( ` https://tucajas.pythonanywhere.com/clientes/${ id }`);
   }
 
   agregarCliente(cliente: Cliente):Observable<Cliente>{
@@ -23,10 +23,10 @@ export class ClientesService {
   }
 
   actualizarCliente(cliente: Cliente):Observable<Cliente>{
-    return this.http.put<Cliente>(`http://127.0.0.1:8000/clientes/${cliente.id}`,cliente );
+    return this.http.put<Cliente>(`https://tucajas.pythonanywhere.com/clientes/${cliente.id}`,cliente );
   }
   eliminarCliente(id: number):Observable<any>{
-    return this.http.delete<any>(`http://127.0.0.1:8000/clientes/${id}` );
+    return this.http.delete<any>(`https://tucajas.pythonanywhere.com/clientes/${id}` );
   }
 
 
